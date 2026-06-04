@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useMotionValue, useTransform, animate, useInView } from 'motion/react';
+import { useMotionValue, useTransform, animate } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 
 interface CounterProps {
@@ -13,28 +13,48 @@ interface CounterProps {
 
 export function Counter({ target, suffix = '', prefix = '', className, duration = 2 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => prefix + Math.round(latest) + suffix);
+  const [display, setDisplay] = useState(prefix + '0' + suffix);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-      animate(count, target, {
-        duration,
-        ease: [0.16, 1, 0.3, 1],
-      });
-    }
-  }, [isInView, count, target, duration, hasAnimated]);
+    if (hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          const startTime = performance.now();
+
+          const tick = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / (duration * 1000), 1);
+            // Ease out expo
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.round(eased * target);
+            setDisplay(prefix + current + suffix);
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            }
+          };
+
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [target, prefix, suffix, duration]);
 
   return (
-    <motion.span
-      ref={ref}
-      className={className}
-      suppressHydrationWarning
-    >
-      {rounded}
-    </motion.span>
+    <span ref={ref} className={className} suppressHydrationWarning>
+      {display}
+    </span>
   );
 }
