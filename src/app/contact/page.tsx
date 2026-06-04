@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Phone, MessageCircle, Calendar, Send, ArrowRight, Clock } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { GradientOrb } from '@/components/animations/GradientOrb';
 import { MagneticButton } from '@/components/animations/MagneticButton';
-import { Badge } from '@/components/ui/Badge';
 import { Input, Textarea, Select } from '@/components/ui/FormElements';
 
 export default function ContactPage() {
@@ -18,20 +18,32 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero — Asymmetric with image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <GradientOrb color="rgba(20, 184, 166, 0.08)" size={500} top="-200px" right="-100px" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="max-w-3xl">
-            <Badge color="#14b8a6">Contact</Badge>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mt-6 mb-6 text-[var(--text-100)]">
-              Get in touch
-            </h1>
-            <p className="text-xl text-[var(--text-300)] leading-relaxed">
-              Have a project in mind? Let&apos;s talk about how we can help transform your business with AI-powered solutions.
-            </p>
-          </ScrollReveal>
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+            <ScrollReveal>
+              <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+                Get in touch
+              </h1>
+              <p className="text-xl text-[var(--text-300)] leading-relaxed">
+                Have a project in mind? Let&apos;s talk about how we can help transform your business with AI-powered solutions.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal className="hidden lg:block">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=600&q=80"
+                  alt="Modern workspace ready for collaboration on AI projects"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -78,7 +90,7 @@ export default function ContactPage() {
                     <Textarea label="Message" rows={5} placeholder="Tell us about your project..." required />
                     <MagneticButton
                       type="submit"
-                      className="group w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white font-semibold rounded-xl text-base hover:shadow-lg hover:shadow-[#14b8a6]/20 transition-shadow"
+                      className="group w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-base hover:bg-[var(--color-brand-400)] transition-colors"
                     >
                       Send Message
                       <Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -132,9 +144,9 @@ export default function ContactPage() {
                   </div>
 
                   {/* Schedule */}
-                  <div className="p-7 rounded-2xl bg-gradient-to-br from-[#14b8a6]/10 to-[#06b6d4]/5 border border-[#14b8a6]/20">
+                  <div className="p-7 rounded-2xl bg-[var(--surface-2)] border border-[var(--surface-3)]/30">
                     <div className="flex items-center gap-3 mb-4">
-                      <Calendar className="w-5 h-5 text-[#14b8a6]" />
+                      <Calendar className="w-5 h-5 text-[var(--color-brand-500)]" />
                       <h3 className="font-display font-bold text-lg text-[var(--text-100)]">Schedule a Call</h3>
                     </div>
                     <p className="text-sm text-[var(--text-300)] mb-5">
@@ -142,7 +154,7 @@ export default function ContactPage() {
                     </p>
                     <a
                       href="#"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#14b8a6] hover:gap-3 transition-all"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-500)] hover:gap-3 transition-all"
                     >
                       Open Scheduling Page <ArrowRight className="w-4 h-4" />
                     </a>

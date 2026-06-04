@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="min-h-screen flex items-center justify-center px-5">
       <div className="text-center max-w-lg">
-        <div className="font-display font-black text-[8rem] leading-none bg-gradient-to-br from-[#14b8a6] via-[#7c3aed] to-[#f59e0b] bg-clip-text text-transparent mb-4">
+        <div className="font-display font-black text-[8rem] leading-none text-[var(--color-brand-500)] mb-4">
           404
         </div>
         <h1 className="font-display font-bold text-3xl sm:text-4xl tracking-tight mb-4 text-[var(--text-100)]">
@@ -17,7 +17,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="group inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white font-semibold rounded-xl text-base hover:shadow-xl hover:shadow-[#14b8a6]/25 transition-shadow"
+            className="group inline-flex items-center gap-2.5 px-8 py-4 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-base hover:bg-[var(--color-brand-400)] transition-colors"
           >
             <Home className="w-4.5 h-4.5" />
             Back to Home

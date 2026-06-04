@@ -1,11 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import { ArrowRight, ExternalLink, Globe, Bot, Kanban, Zap, Cloud, BarChart3 } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerChildren';
 import { Counter } from '@/components/animations/Counter';
 import { GradientOrb } from '@/components/animations/GradientOrb';
-import { Badge } from '@/components/ui/Badge';
+import { MagneticButton } from '@/components/animations/MagneticButton';
 import { team } from '@/data/team';
 import Link from 'next/link';
 
@@ -21,24 +22,36 @@ const expertiseIcons: Record<string, React.ReactNode> = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — Asymmetric with image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <GradientOrb color="rgba(20, 184, 166, 0.08)" size={600} top="-200px" left="-200px" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="max-w-3xl">
-            <Badge color="#14b8a6">About Us</Badge>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mt-6 mb-6 text-[var(--text-100)]">
-              Pioneers in AI solutions & innovation
-            </h1>
-            <p className="text-xl text-[var(--text-300)] leading-relaxed">
-              Empowering businesses worldwide with agentic AI, automation, and digital transformation.
-            </p>
-          </ScrollReveal>
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+            <ScrollReveal>
+              <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+                Pioneers in AI solutions & innovation
+              </h1>
+              <p className="text-xl text-[var(--text-300)] leading-relaxed">
+                Empowering businesses worldwide with agentic AI, automation, and digital transformation.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal className="hidden lg:block">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="Team collaborating on AI-powered digital transformation projects"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Company Story */}
+      {/* Company Story — Text + Stats inline */}
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -59,9 +72,9 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
 
-            {/* Stats */}
+            {/* Stats — horizontal strip, not grid */}
             <ScrollReveal delay={0.2}>
-              <div className="grid grid-cols-2 gap-5">
+              <div className="flex flex-col gap-6">
                 {[
                   { value: 15, suffix: '+', label: 'Countries Served', color: '#14b8a6' },
                   { value: 50, suffix: '+', label: 'Projects Delivered', color: '#7c3aed' },
@@ -70,9 +83,9 @@ export default function AboutPage() {
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="p-6 rounded-2xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 text-center"
+                    className="flex items-center gap-5 p-5 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30"
                   >
-                    <div className="font-display font-black text-4xl mb-1" style={{ color: stat.color }}>
+                    <div className="font-display font-black text-3xl shrink-0" style={{ color: stat.color }}>
                       <Counter target={stat.value} suffix={stat.suffix} duration={2} />
                     </div>
                     <div className="text-sm text-[var(--text-400)]">{stat.label}</div>
@@ -84,7 +97,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission & Vision — Side by side, different colors */}
       <section className="py-20 bg-[var(--surface-1)]/50">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal className="mb-12">
@@ -125,23 +138,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Founder — Large image + bio */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-2">
-                <div className="relative">
-                  <div className="w-48 h-48 rounded-3xl bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex items-center justify-center">
-                    <span className="font-display font-black text-5xl text-white">NT</span>
-                  </div>
-                  <div className="absolute -bottom-3 -right-3 w-12 h-12 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 flex items-center justify-center">
-                    <span className="text-xl">🏆</span>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                  <Image
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80"
+                    alt="Nikhil Tiwari, Founder of Nik's Consulting, working on AI solutions"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="lg:col-span-3">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#14b8a6] mb-2 block">Founder</span>
+                <p className="text-sm font-semibold text-[var(--color-brand-500)] mb-2">Founder</p>
                 <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-2 text-[var(--text-100)]">
                   Nikhil Tiwari
                 </h2>
@@ -168,12 +181,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team — Horizontal scroll, not identical grid */}
       <section className="py-20 bg-[var(--surface-1)]/50">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal className="mb-12">
-            <Badge color="#7c3aed">Our Team</Badge>
-            <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mt-6 text-[var(--text-100)]">
+            <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
               The people behind the innovation
             </h2>
           </ScrollReveal>
@@ -184,7 +196,7 @@ export default function AboutPage() {
                 <div className="p-7 rounded-2xl bg-[var(--surface-2)] border border-[var(--surface-3)]/30 group hover:border-[var(--surface-4)] transition-all duration-500 hover:-translate-y-1">
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 font-display font-bold text-xl text-white"
-                    style={{ background: `linear-gradient(135deg, ${member.accentColor}, color-mix(in srgb, ${member.accentColor} 60%, #06b6d4))` }}
+                    style={{ background: member.accentColor }}
                   >
                     {member.initials}
                   </div>
@@ -198,7 +210,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Expertise */}
+      {/* Expertise — Wrapped tags, not grid */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal className="mb-12">
@@ -207,28 +219,31 @@ export default function AboutPage() {
             </h2>
           </ScrollReveal>
 
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4" staggerDelay={0.06}>
-            {[
-              { name: 'AI & Agentic AI', color: '#14b8a6' },
-              { name: 'AI Automation', color: '#0ea5e9' },
-              { name: 'Agile Scrum', color: '#f59e0b' },
-              { name: 'Digital Transformation', color: '#7c3aed' },
-              { name: 'Product Management', color: '#f43f5e' },
-              { name: 'Cloud & DevOps', color: '#10b981' },
-            ].map((exp) => (
-              <StaggerItem key={exp.name}>
-                <div className="p-5 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 flex items-center gap-3 hover:border-[var(--surface-4)] transition-all duration-300">
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+          <ScrollReveal>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { name: 'AI & Agentic AI', color: '#14b8a6' },
+                { name: 'AI Automation', color: '#0ea5e9' },
+                { name: 'Agile Scrum', color: '#f59e0b' },
+                { name: 'Digital Transformation', color: '#7c3aed' },
+                { name: 'Product Management', color: '#f43f5e' },
+                { name: 'Cloud & DevOps', color: '#10b981' },
+              ].map((exp) => (
+                <span
+                  key={exp.name}
+                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 text-[var(--text-200)] font-medium hover:border-[var(--surface-4)] transition-all"
+                >
+                  <span
+                    className="w-8 h-8 rounded-lg flex items-center justify-center"
                     style={{ background: `color-mix(in srgb, ${exp.color} 12%, transparent)`, color: exp.color }}
                   >
                     {expertiseIcons[exp.name]}
-                  </div>
-                  <span className="font-medium text-[var(--text-200)]">{exp.name}</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                  </span>
+                  {exp.name}
+                </span>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

@@ -1,13 +1,13 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Brain, Bot, Zap, Globe, Share2, Kanban, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerChildren';
 import { MagneticButton } from '@/components/animations/MagneticButton';
 import { GradientOrb } from '@/components/animations/GradientOrb';
-import { Badge } from '@/components/ui/Badge';
 import { services } from '@/data/services';
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -19,19 +19,36 @@ const serviceIcons: Record<string, React.ReactNode> = {
   Kanban: <Kanban className="w-7 h-7" />,
 };
 
+const serviceImages = [
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
+];
+
+const serviceAlts = [
+  'AI analytics dashboard with real-time data processing',
+  'Automated data pipeline and machine learning workflow',
+  'Business intelligence dashboard on laptop screen',
+  'Data visualization for business decision making',
+  'Modern workspace with integrated digital tools',
+  'Team collaborating on AI-powered platform development',
+];
+
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — Left-aligned, asymmetric */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <GradientOrb color="rgba(20, 184, 166, 0.1)" size={600} top="-200px" left="-200px" />
         <GradientOrb color="rgba(124, 58, 237, 0.06)" size={400} bottom="-100px" right="-100px" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal className="max-w-3xl">
-            <Badge color="#14b8a6">Our Services</Badge>
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mt-6 mb-6 text-[var(--text-100)]">
-              AI-powered solutions
+            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+              What we build
             </h1>
             <p className="text-xl text-[var(--text-300)] leading-relaxed">
               Digital transformation services designed to revolutionize your business — from agentic AI to intelligent automation.
@@ -40,101 +57,101 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Details */}
+      {/* Service Details — Alternating layouts */}
       <section className="pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="space-y-8">
-            {services.map((service, i) => (
-              <ScrollReveal key={service.id}>
-                <div
-                  id={service.id}
-                  className="scroll-mt-28 relative rounded-3xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 overflow-hidden group"
-                >
-                  {/* Top color bar */}
+            {services.map((service, i) => {
+              const isEven = i % 2 === 0;
+              return (
+                <ScrollReveal key={service.id}>
                   <div
-                    className="h-1"
-                    style={{
-                      background: `linear-gradient(90deg, ${service.gradientFrom}, ${service.gradientTo})`,
-                    }}
-                  />
+                    id={service.id}
+                    className="scroll-mt-28 relative rounded-3xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 overflow-hidden group"
+                  >
+                    {/* Hover glow */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                      style={{
+                        background: `radial-gradient(circle at ${isEven ? '20%' : '80%'} 30%, color-mix(in srgb, ${service.accentColor} 5%, transparent) 0%, transparent 50%)`,
+                      }}
+                    />
 
-                  {/* Hover glow */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{
-                      background: `radial-gradient(circle at 20% 30%, color-mix(in srgb, ${service.accentColor} 5%, transparent) 0%, transparent 50%)`,
-                    }}
-                  />
+                    <div className="relative p-8 sm:p-12 lg:p-16">
+                      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 ${!isEven ? 'lg:[direction:rtl]' : ''}`}>
+                        {/* Content */}
+                        <div className="lg:[direction:ltr]">
+                          <div className="flex items-center gap-4 mb-6">
+                            <span
+                              className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                              style={{
+                                background: `color-mix(in srgb, ${service.accentColor} 12%, transparent)`,
+                                color: service.accentColor,
+                              }}
+                            >
+                              {serviceIcons[service.icon]}
+                            </span>
+                          </div>
 
-                  <div className="relative p-8 sm:p-12 lg:p-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                      {/* Left */}
-                      <div>
-                        <div className="flex items-center gap-4 mb-6">
-                          <span
-                            className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                            style={{
-                              background: `color-mix(in srgb, ${service.accentColor} 12%, transparent)`,
-                              color: service.accentColor,
-                            }}
+                          <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
+                            {service.title}
+                          </h2>
+                          <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8">
+                            {service.description}
+                          </p>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                            {service.features.map((feature, j) => (
+                              <div
+                                key={j}
+                                className="flex items-start gap-3 p-3 rounded-lg bg-[var(--surface-2)]/50"
+                              >
+                                <CheckCircle2
+                                  className="w-4 h-4 shrink-0 mt-0.5"
+                                  style={{ color: service.accentColor }}
+                                />
+                                <span className="text-sm text-[var(--text-300)]">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+
+                          <MagneticButton
+                            href="/get-a-quote"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-colors duration-300 hover:opacity-90"
+                            strength={0.1}
                           >
-                            {serviceIcons[service.icon]}
-                          </span>
-                          <span className="font-mono text-sm text-[var(--text-500)]">
-                            0{i + 1}
-                          </span>
+                            <span
+                              style={{ background: service.accentColor }}
+                              className="absolute inset-0 rounded-xl"
+                            />
+                            <span className="relative flex items-center gap-2">
+                              Get Started
+                              <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </MagneticButton>
                         </div>
 
-                        <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
-                          {service.title}
-                        </h2>
-                        <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8">
-                          {service.description}
-                        </p>
-
-                        <MagneticButton
-                          href="/get-a-quote"
-                          className="group/btn inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg"
-                          strength={0.1}
-                        >
-                          <span
-                            style={{
-                              background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
-                            }}
-                            className="absolute inset-0 rounded-xl"
+                        {/* Image */}
+                        <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:[direction:ltr]">
+                          <Image
+                            src={serviceImages[i % serviceImages.length]}
+                            alt={serviceAlts[i % serviceAlts.length]}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
                           />
-                          <span className="relative flex items-center gap-2">
-                            Get Started
-                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                          </span>
-                        </MagneticButton>
-                      </div>
-
-                      {/* Right — Features */}
-                      <div>
-                        <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--text-400)] mb-6">
-                          What&apos;s Included
-                        </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          {service.features.map((feature, j) => (
-                            <div
-                              key={j}
-                              className="flex items-start gap-3 p-4 rounded-xl bg-[var(--surface-2)]/50 border border-[var(--surface-3)]/20"
-                            >
-                              <CheckCircle2
-                                className="w-5 h-5 shrink-0 mt-0.5"
-                                style={{ color: service.accentColor }}
-                              />
-                              <span className="text-sm text-[var(--text-200)]">{feature}</span>
-                            </div>
-                          ))}
+                          <div
+                            className="absolute inset-0"
+                            style={{
+                              background: `linear-gradient(135deg, color-mix(in srgb, ${service.accentColor} 15%, transparent) 0%, transparent 60%)`,
+                            }}
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -158,7 +175,7 @@ export default function ServicesPage() {
                   View Case Studies <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="p-10 rounded-2xl bg-gradient-to-br from-[#14b8a6]/10 to-[#06b6d4]/10 border border-[#14b8a6]/20">
+              <div className="p-10 rounded-2xl bg-[var(--surface-2)] border border-[var(--color-brand-500)]/20">
                 <h3 className="font-display font-bold text-2xl mb-3 text-[var(--text-100)]">
                   Not sure which service you need?
                 </h3>
@@ -167,7 +184,7 @@ export default function ServicesPage() {
                 </p>
                 <MagneticButton
                   href="/get-a-quote"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white font-semibold text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-brand-500)] text-white font-semibold text-sm hover:bg-[var(--color-brand-400)] transition-colors"
                 >
                   Book a Free Consultation <ArrowRight className="w-4 h-4" />
                 </MagneticButton>

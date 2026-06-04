@@ -52,7 +52,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex items-center justify-center font-display font-black text-white text-sm tracking-tight">
+            <div className="w-9 h-9 rounded-lg bg-[var(--color-brand-500)] flex items-center justify-center font-display font-black text-white text-sm tracking-tight">
               N
             </div>
             <span className="font-display font-bold text-[var(--text-100)] text-lg tracking-tight">
@@ -125,7 +125,7 @@ export function Navbar() {
 
             <Link
               href="/get-a-quote"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white text-sm font-semibold hover:shadow-lg hover:shadow-[#14b8a6]/20 transition-all duration-300 hover:-translate-y-0.5"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--color-brand-500)] text-white text-sm font-semibold hover:bg-[var(--color-brand-400)] transition-colors duration-300"
             >
               Get a Quote
               <ArrowRight className="w-3.5 h-3.5" />
@@ -188,7 +188,7 @@ export function Navbar() {
                 <Link
                   href="/get-a-quote"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#06b6d4] text-white font-semibold text-lg"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[var(--color-brand-500)] text-white font-semibold text-lg hover:bg-[var(--color-brand-400)] transition-colors"
                 >
                   Get a Quote
                   <ArrowRight className="w-5 h-5" />

@@ -42,7 +42,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#14b8a6] to-[#06b6d4] flex items-center justify-center font-display font-black text-white text-sm">
+              <div className="w-9 h-9 rounded-lg bg-[var(--color-brand-500)] flex items-center justify-center font-display font-black text-white text-sm">
                 N
               </div>
               <span className="font-display font-bold text-[var(--text-100)] text-lg">Nik&apos;s</span>
