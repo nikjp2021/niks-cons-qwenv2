@@ -36,8 +36,8 @@
   --text-500: #5e5e78;
 
   /* Typography */
-  --font-display: 'Satoshi', 'General Sans', system-ui, sans-serif;
-  --font-body: 'General Sans', 'Satoshi', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* Font Sizes - Fluid scale */

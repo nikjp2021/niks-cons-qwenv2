@@ -185,7 +185,7 @@ export default function GetAQuotePage() {
                     ) : (
                       <MagneticButton
                         type="submit"
-                        className="group inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#7c3aed] text-white font-semibold rounded-xl text-sm hover:bg-[#6d28d9] transition-colors"
+                        className="group inline-flex items-center gap-2.5 px-8 py-3.5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-sm hover:bg-[var(--color-brand-600)] transition-colors"
                       >
                         Submit Quote Request
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

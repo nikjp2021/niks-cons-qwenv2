@@ -59,7 +59,7 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 h-[3px] origin-left z-[100]"
         style={{
           scaleX,
-          background: 'linear-gradient(90deg, #14b8a6, #7c3aed, #f59e0b)',
+          background: 'linear-gradient(90deg, #14b8a6, #0d9488)',
         }}
       />
 
@@ -99,7 +99,7 @@ export default function Home() {
               delay={0.2}
               staggerDelay={0.05}
             >
-              We build AI solutions that actually ship.
+              We build AI-powered solutions that actually ship.
             </TextReveal>
           </div>
 
@@ -187,7 +187,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
               <div className="max-w-2xl">
                 <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--text-100)]">
-                  What we build
+                  AI-powered solutions for modern businesses
                 </h2>
                 <p className="text-lg text-[var(--text-300)] leading-relaxed mt-5">
                   From intelligent automation to full digital transformation — we deliver measurable results, not slide decks.
@@ -408,7 +408,7 @@ export default function Home() {
           </ScrollReveal>
 
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6" staggerDelay={0.1}>
-            {caseStudies.slice(0, 4).map((cs, i) => {
+            {caseStudies.map((cs, i) => {
               const images = [
                 '/images/workspace.webp',
                 '/images/team-collab.webp',

@@ -48,10 +48,10 @@ export default function ServicesPage() {
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal className="max-w-3xl">
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
-              What we build
+              Our Services
             </h1>
             <p className="text-xl text-[var(--text-300)] leading-relaxed">
-              Digital transformation services designed to revolutionize your business — from agentic AI to intelligent automation.
+              AI-powered solutions and digital transformation services designed to revolutionize your business — from agentic AI to intelligent automation.
             </p>
           </ScrollReveal>
         </div>
