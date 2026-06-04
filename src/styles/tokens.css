@@ -73,9 +73,9 @@
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   /* ──────────────────────────────────────────────
-     FONT SIZE SCALE — Fluid Typography
-     Source: brand-guide.md § Font Scale
-     Sizes ≥ 5xl use clamp() for responsive scaling
+     FONT SIZE SCALE — Fluid Typography (Premium)
+     Inspired by Apple.com — large, cinematic typography
+     Sizes ≥ 4xl use clamp() for responsive scaling
      ────────────────────────────────────────────── */
   --text-xs:  0.75rem;                                      /* 12px — Badges, tiny labels */
   --text-sm:  0.875rem;                                     /* 14px — Captions, card body */
@@ -84,15 +84,15 @@
   --text-xl:  1.25rem;                                      /* 20px — Subheadings */
   --text-2xl: 1.5rem;                                       /* 24px — Card titles */
   --text-3xl: 1.875rem;                                     /* 30px — Section subtitles */
-  --text-4xl: clamp(2rem, 3vw, 2.25rem);                    /* 36px — Section headings (mobile) */
-  --text-5xl: clamp(2.5rem, 4vw, 3rem);                     /* 48px — Section headings */
-  --text-6xl: clamp(3rem, 5vw, 3.75rem);                    /* 60px — Hero headings (desktop) */
-  --text-7xl: clamp(3.5rem, 6vw, 4.5rem);                   /* 72px — Hero headings (xl) */
-  --text-8xl: clamp(4rem, 8vw, 6rem);                       /* 96px — Display headings */
+  --text-4xl: clamp(2.25rem, 3.5vw, 2.75rem);               /* 44px — Section headings */
+  --text-5xl: clamp(2.75rem, 4.5vw, 3.5rem);                /* 56px — Large section headings */
+  --text-6xl: clamp(3.25rem, 5.5vw, 4.25rem);               /* 68px — Hero headings */
+  --text-7xl: clamp(4rem, 7vw, 5.5rem);                      /* 88px — Large hero headings */
+  --text-8xl: clamp(5rem, 10vw, 8rem);                       /* 128px — Display headings (Apple-style) */
 
   /* ──────────────────────────────────────────────
-     SPACING SCALE — 4px base
-     Source: brand-guide.md § Spacing Scale
+     SPACING SCALE — 4px base (Premium generous spacing)
+     Inspired by Apple.com — generous whitespace
      ────────────────────────────────────────────── */
   --space-px: 1px;
   --space-0:  0;
@@ -110,6 +110,8 @@
   --space-24: 6rem;      /* 96px — Large section margins */
   --space-28: 7rem;      /* 112px — Page sections */
   --space-32: 8rem;      /* 128px — Page padding */
+  --space-36: 9rem;      /* 144px — Premium section spacing */
+  --space-40: 10rem;     /* 160px — Cinematic section spacing */
 
   /* ──────────────────────────────────────────────
      BORDER RADIUS — Soft friendly scale
@@ -146,17 +148,18 @@
   --orb-amber:  radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
 
   /* ──────────────────────────────────────────────
-     MOTION TOKENS
-     Source: brand-guide.md § Motion Principles
+     MOTION TOKENS (Premium smooth animations)
+     Inspired by Apple.com — buttery smooth, cinematic
      ────────────────────────────────────────────── */
-  --duration-fast:   150ms;    /* Micro-interactions, button presses */
-  --duration-normal: 300ms;    /* Standard transitions, hover states */
-  --duration-slow:   500ms;    /* Page transitions, modal animations */
-  --duration-slower: 800ms;    /* Complex orchestrated animations */
+  --duration-fast:   200ms;    /* Micro-interactions, button presses */
+  --duration-normal: 400ms;    /* Standard transitions, hover states */
+  --duration-slow:   600ms;    /* Page transitions, modal animations */
+  --duration-slower: 1000ms;   /* Complex orchestrated animations */
 
   --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);   /* Hero entrances, bold movements */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);   /* Scroll reveals, card interactions */
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);  /* Custom smooth ease */
+  --ease-apple:     cubic-bezier(0.25, 0.1, 0.25, 1); /* Apple-style smooth easing */
   --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);    /* Balanced transitions */
   --ease-in:        cubic-bezier(0.4, 0, 1, 1);      /* Entrance animations */
   --ease-out:       cubic-bezier(0, 0, 0.2, 1);      /* Exit animations */
@@ -166,6 +169,7 @@
      Bouncy:   { type: "spring", stiffness: 200, damping: 20 }
      Stiff:    { type: "spring", stiffness: 400, damping: 30 }
      Smooth:   { type: "spring", stiffness: 100, damping: 20 }
+     Apple:    { type: "spring", stiffness: 120, damping: 20 }
   */
 
   /* ──────────────────────────────────────────────

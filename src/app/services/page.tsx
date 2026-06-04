@@ -10,12 +10,12 @@ import { GradientOrb } from '@/components/animations/GradientOrb';
 import { services } from '@/data/services';
 
 const serviceIcons: Record<string, React.ReactNode> = {
-  Brain: <Brain className="w-7 h-7" />,
-  Bot: <Bot className="w-7 h-7" />,
-  Zap: <Zap className="w-7 h-7" />,
-  Globe: <Globe className="w-7 h-7" />,
-  Share2: <Share2 className="w-7 h-7" />,
-  Kanban: <Kanban className="w-7 h-7" />,
+  Brain: <Brain className="w-8 h-8" />,
+  Bot: <Bot className="w-8 h-8" />,
+  Zap: <Zap className="w-8 h-8" />,
+  Globe: <Globe className="w-8 h-8" />,
+  Share2: <Share2 className="w-8 h-8" />,
+  Kanban: <Kanban className="w-8 h-8" />,
 };
 
 const serviceImages = [
@@ -40,89 +40,89 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden hero-gradient">
-        <GradientOrb color="rgba(20, 184, 166, 0.1)" size={600} top="-200px" left="-200px" />
+      <section className="relative pt-40 pb-24 overflow-hidden hero-gradient">
+        <GradientOrb color="rgba(20, 184, 166, 0.1)" size={800} top="-300px" left="-300px" />
 
         <div className="relative section-container">
           <ScrollReveal className="max-w-3xl">
-            <span className="badge-pill mb-4">Our Services</span>
-            <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+            <span className="badge-pill mb-6 inline-flex">Our Services</span>
+            <h1 className="font-display font-extrabold text-6xl sm:text-7xl lg:text-8xl tracking-[-0.04em] mb-8 text-[var(--text-100)]">
               AI-powered solutions for modern businesses
             </h1>
-            <p className="text-xl text-[var(--text-300)] leading-relaxed">
+            <p className="text-2xl text-[var(--text-300)] leading-relaxed font-light">
               Digital transformation services designed to revolutionize your business — from agentic AI to intelligent automation.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Service Details — Alternating layouts */}
+      {/* Service Details — Premium alternating layouts */}
       <section className="section-padding">
         <div className="section-container">
-          <div className="space-y-8">
+          <div className="space-y-12">
             {services.map((service, i) => {
               const isEven = i % 2 === 0;
               return (
                 <ScrollReveal key={service.id}>
                   <div
                     id={service.id}
-                    className="scroll-mt-28 relative rounded-3xl glass-card overflow-hidden group"
+                    className="scroll-mt-32 relative rounded-3xl glass-card overflow-hidden group"
                   >
                     {/* Hover glow */}
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                       style={{
-                        background: `radial-gradient(circle at ${isEven ? '20%' : '80%'} 30%, color-mix(in srgb, ${service.accentColor} 5%, transparent) 0%, transparent 50%)`,
+                        background: `radial-gradient(circle at ${isEven ? '20%' : '80%'} 30%, color-mix(in srgb, ${service.accentColor} 4%, transparent) 0%, transparent 50%)`,
                       }}
                     />
 
-                    <div className="relative p-8 sm:p-12 lg:p-16">
-                      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 ${!isEven ? 'lg:[direction:rtl]' : ''}`}>
+                    <div className="relative p-10 sm:p-14 lg:p-20">
+                      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 ${!isEven ? 'lg:[direction:rtl]' : ''}`}>
                         {/* Content */}
                         <div className="lg:[direction:ltr]">
-                          <div className="flex items-center gap-4 mb-6">
+                          <div className="flex items-center gap-5 mb-8">
                             <span
-                              className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                              className="w-16 h-16 rounded-2xl flex items-center justify-center"
                               style={{
-                                background: `color-mix(in srgb, ${service.accentColor} 12%, transparent)`,
+                                background: `color-mix(in srgb, ${service.accentColor} 10%, transparent)`,
                                 color: service.accentColor,
                               }}
                             >
                               {serviceIcons[service.icon]}
                             </span>
-                            <span className="font-mono text-xs font-semibold" style={{ color: service.accentColor }}>
+                            <span className="font-mono text-sm font-semibold" style={{ color: service.accentColor }}>
                               {String(i + 1).padStart(2, '0')}
                             </span>
                           </div>
 
-                          <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
+                          <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-[-0.03em] mb-6 text-[var(--text-100)]">
                             {service.title}
                           </h2>
-                          <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8">
+                          <p className="text-xl text-[var(--text-300)] leading-relaxed mb-10 font-light">
                             {service.description}
                           </p>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                             {service.features.map((feature, j) => (
                               <div
                                 key={j}
-                                className="flex items-start gap-3 p-3 rounded-lg bg-[var(--surface-2)]/50"
+                                className="flex items-start gap-3 p-4 rounded-xl bg-[var(--surface-2)]/30"
                               >
                                 <CheckCircle2
-                                  className="w-4 h-4 shrink-0 mt-0.5"
+                                  className="w-5 h-5 shrink-0 mt-0.5"
                                   style={{ color: service.accentColor }}
                                 />
-                                <span className="text-sm text-[var(--text-300)]">{feature}</span>
+                                <span className="text-base text-[var(--text-300)]">{feature}</span>
                               </div>
                             ))}
                           </div>
 
                           <MagneticButton
                             href="/get-a-quote"
-                            className="glow-button inline-flex items-center gap-2 px-6 py-3.5 font-semibold rounded-xl text-white"
+                            className="glow-button inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full text-white"
                           >
                             Get Started
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-5 h-5" />
                           </MagneticButton>
                         </div>
 
@@ -132,12 +132,12 @@ export default function ServicesPage() {
                             src={serviceImages[i % serviceImages.length]}
                             alt={serviceAlts[i % serviceAlts.length]}
                             fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
                           />
                           <div
                             className="absolute inset-0"
                             style={{
-                              background: `linear-gradient(135deg, color-mix(in srgb, ${service.accentColor} 15%, transparent) 0%, transparent 60%)`,
+                              background: `linear-gradient(135deg, color-mix(in srgb, ${service.accentColor} 10%, transparent) 0%, transparent 50%)`,
                             }}
                           />
                         </div>
@@ -152,15 +152,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Cross-sell CTA */}
-      <section className="section-padding bg-[var(--surface-1)]/50">
+      <section className="section-padding bg-[var(--surface-1)]/30">
         <div className="section-container">
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="glass-card p-10">
-                <h3 className="font-display font-bold text-2xl mb-3 text-[var(--text-100)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="glass-card p-12">
+                <h3 className="font-display font-bold text-3xl mb-4 text-[var(--text-100)]">
                   See our work in action
                 </h3>
-                <p className="text-[var(--text-300)] mb-6">
+                <p className="text-[var(--text-300)] mb-8 text-lg font-light">
                   Explore 6 real case studies — from AI-powered triage in Japan to e-commerce automation in Brazil.
                 </p>
                 <Link
@@ -170,18 +170,18 @@ export default function ServicesPage() {
                   View Case Studies <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="glass-card p-10 border-[var(--color-brand-500)]/20">
-                <h3 className="font-display font-bold text-2xl mb-3 text-[var(--text-100)]">
+              <div className="glass-card p-12 border-[var(--color-brand-500)]/15">
+                <h3 className="font-display font-bold text-3xl mb-4 text-[var(--text-100)]">
                   Not sure which service you need?
                 </h3>
-                <p className="text-[var(--text-300)] mb-6">
+                <p className="text-[var(--text-300)] mb-8 text-lg font-light">
                   Book a free consultation and we&apos;ll help you identify the best solutions for your business.
                 </p>
                 <MagneticButton
                   href="/get-a-quote"
-                  className="glow-button inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl text-white text-sm"
+                  className="glow-button inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full text-white"
                 >
-                  Book a Free Consultation <ArrowRight className="w-4 h-4" />
+                  Book a Free Consultation <ArrowRight className="w-5 h-5" />
                 </MagneticButton>
               </div>
             </div>
