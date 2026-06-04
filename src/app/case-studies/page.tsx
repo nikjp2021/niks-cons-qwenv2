@@ -10,12 +10,12 @@ import { GradientOrb } from '@/components/animations/GradientOrb';
 import { caseStudies } from '@/data/caseStudies';
 
 const csImages = [
-  '/images/workspace.png',
-  '/images/team-collab.png',
-  '/images/ai-network.png',
-  '/images/ai-dashboard.png',
-  '/images/data-analytics.png',
-  '/images/ai-automation.png',
+  '/images/workspace.webp',
+  '/images/team-collab.webp',
+  '/images/ai-network.webp',
+  '/images/ai-dashboard.webp',
+  '/images/data-analytics.webp',
+  '/images/ai-automation.webp',
 ];
 
 const csAlts = [

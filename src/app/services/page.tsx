@@ -20,12 +20,12 @@ const serviceIcons: Record<string, React.ReactNode> = {
 };
 
 const serviceImages = [
-  '/images/ai-dashboard.png',
-  '/images/ai-automation.png',
-  '/images/data-analytics.png',
-  '/images/workspace.png',
-  '/images/team-collab.png',
-  '/images/ai-network.png',
+  '/images/ai-dashboard.webp',
+  '/images/ai-automation.webp',
+  '/images/data-analytics.webp',
+  '/images/workspace.webp',
+  '/images/team-collab.webp',
+  '/images/ai-network.webp',
 ];
 
 const serviceAlts = [

@@ -35,7 +35,7 @@ export default function ContactPage() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="/images/workspace.png"
+                  src="/images/workspace.webp"
                   alt="Modern workspace ready for collaboration on AI projects"
                   fill
                   className="object-cover"

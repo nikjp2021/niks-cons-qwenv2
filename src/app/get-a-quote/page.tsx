@@ -46,7 +46,7 @@ export default function GetAQuotePage() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="/images/ai-automation.png"
+                  src="/images/ai-automation.webp"
                   alt="AI automation and data processing for project planning"
                   fill
                   className="object-cover"

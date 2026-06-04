@@ -39,7 +39,7 @@ export default function AboutPage() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
                 <Image
-                  src="/images/team-collab.png"
+                  src="/images/team-collab.webp"
                   alt="Team collaborating on AI-powered digital transformation projects"
                   fill
                   className="object-cover"
@@ -146,7 +146,7 @@ export default function AboutPage() {
               <div className="lg:col-span-2">
                 <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                   <Image
-                    src="/images/ai-network.png"
+                    src="/images/ai-network.webp"
                     alt="Nikhil Tiwari, Founder of Nik's Consulting, working on AI solutions"
                     fill
                     className="object-cover"

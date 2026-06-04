@@ -155,7 +155,7 @@ export default function Home() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
                   <Image
-                    src="/images/ai-dashboard.png"
+                    src="/images/ai-dashboard.webp"
                     alt="AI-powered analytics dashboard showing real-time business intelligence"
                     fill
                     className="object-cover"
@@ -233,7 +233,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-2">
                 <div className="relative aspect-[16/9] lg:aspect-auto">
                   <Image
-                    src="/images/ai-automation.png"
+                    src="/images/ai-automation.webp"
                     alt="AI-powered data processing and automation in action"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -348,7 +348,7 @@ export default function Home() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="/images/data-analytics.png"
+                  src="/images/data-analytics.webp"
                   alt="Analytics dashboard showing integrated tools and performance metrics"
                   fill
                   className="object-cover"
@@ -437,10 +437,10 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6" staggerDelay={0.1}>
             {caseStudies.slice(0, 4).map((cs, i) => {
               const images = [
-                '/images/workspace.png',
-                '/images/team-collab.png',
-                '/images/ai-network.png',
-                '/images/ai-dashboard.png',
+                '/images/workspace.webp',
+                '/images/team-collab.webp',
+                '/images/ai-network.webp',
+                '/images/ai-dashboard.webp',
               ];
               const altTexts = [
                 'Data analytics dashboard for logistics optimization',
@@ -508,7 +508,7 @@ export default function Home() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
-                  src="/images/team-collab.png"
+                  src="/images/team-collab.webp"
                   alt="Client team celebrating successful AI implementation results"
                   fill
                   className="object-cover"
@@ -570,7 +570,7 @@ export default function Home() {
               {/* Background image */}
               <div className="absolute inset-0">
                 <Image
-                  src="/images/ai-dashboard.png"
+                  src="/images/ai-dashboard.webp"
                   alt=""
                   fill
                   className="object-cover opacity-10"
