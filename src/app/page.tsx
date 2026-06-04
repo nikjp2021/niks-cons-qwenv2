@@ -155,7 +155,7 @@ export default function Home() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
                   <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                    src="/images/ai-dashboard.png"
                     alt="AI-powered analytics dashboard showing real-time business intelligence"
                     fill
                     className="object-cover"
@@ -233,7 +233,7 @@ export default function Home() {
               <div className="grid lg:grid-cols-2">
                 <div className="relative aspect-[16/9] lg:aspect-auto">
                   <Image
-                    src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80"
+                    src="/images/ai-automation.png"
                     alt="AI-powered data processing and automation in action"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -348,7 +348,7 @@ export default function Home() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                  src="/images/data-analytics.png"
                   alt="Analytics dashboard showing integrated tools and performance metrics"
                   fill
                   className="object-cover"
@@ -437,10 +437,10 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6" staggerDelay={0.1}>
             {caseStudies.slice(0, 4).map((cs, i) => {
               const images = [
-                'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80',
-                'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=800&q=80',
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
-                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+                '/images/workspace.png',
+                '/images/team-collab.png',
+                '/images/ai-network.png',
+                '/images/ai-dashboard.png',
               ];
               const altTexts = [
                 'Data analytics dashboard for logistics optimization',
@@ -508,7 +508,7 @@ export default function Home() {
             <ScrollReveal className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
                 <Image
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80"
+                  src="/images/team-collab.png"
                   alt="Client team celebrating successful AI implementation results"
                   fill
                   className="object-cover"
@@ -570,7 +570,7 @@ export default function Home() {
               {/* Background image */}
               <div className="absolute inset-0">
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+                  src="/images/ai-dashboard.png"
                   alt=""
                   fill
                   className="object-cover opacity-10"
