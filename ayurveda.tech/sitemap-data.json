@@ -1,0 +1,21 @@
+{
+  "url": "https://www.ayurveda.tech",
+  "sitemap_url": "https://www.ayurveda.tech/sitemap.xml",
+  "structure_pages": [
+    {"url": "https://ayurveda.tech/", "title": "Home"},
+    {"url": "https://ayurveda.tech/consultation", "title": "Consultation"},
+    {"url": "https://ayurveda.tech/faq", "title": "FAQ"},
+    {"url": "https://ayurveda.tech/embracing-ayurveda-ancient-wisdom-for-modern-life", "title": "Blog: Embracing Ayurveda"},
+    {"url": "https://ayurveda.tech/old-home", "title": "Old Homepage"}
+  ],
+  "draft_pages": [
+    "home-copy", "home-copy-copy", "home3", "home4", "home5", "home5-copy", "home5-copy1",
+    "home7", "home10", "h6", "hh", "hh-copy", "homenew", "page3", "page4", "page5"
+  ],
+  "brand_identity": {
+    "name": "Ayurveda.Tech",
+    "tagline": "Ancient Wisdom for Modern Wellness",
+    "description": "Your one-stop destination for expert-guided Ayurvedic wellness, delivered digitally",
+    "domain": "ayurveda.tech"
+  }
+}

@@ -1,0 +1,366 @@
+/* ============================================================
+   TOKENS.CSS — Design System for Ayurveda.Tech
+   "Ancient Wisdom for Modern Wellness"
+   Single source of truth for all design decisions.
+   Every component MUST import from this file.
+   NO hardcoded values anywhere.
+   ============================================================ */
+
+/* ============================================================
+   1. LIGHT MODE (Default)
+   ============================================================ */
+:root {
+  /* ---- 1.1 Colors: Primitives ---- */
+  --color-amber-50: #FFFBF5;
+  --color-amber-100: #F5EDE3;
+  --color-amber-200: #E8DFD3;
+  --color-amber-300: #D6CDBE;
+  --color-amber-400: #C4956A;
+  --color-amber-500: #A67B4A;
+  --color-amber-600: #8B5A2B;
+  --color-amber-700: #7A4E24;
+  --color-amber-800: #6B4423;
+  --color-amber-900: #4A2F18;
+
+  --color-green-50: #E8F5E9;
+  --color-green-100: #C8E6C9;
+  --color-green-200: #A5D6A7;
+  --color-green-300: #81C784;
+  --color-green-400: #66BB6A;
+  --color-green-500: #52B788;
+  --color-green-600: #40916C;
+  --color-green-700: #2D6A4F;
+  --color-green-800: #245A42;
+  --color-green-900: #1B4332;
+
+  --color-neutral-50: #F5F0EB;
+  --color-neutral-100: #E8E3DD;
+  --color-neutral-200: #D6D0C9;
+  --color-neutral-300: #B8B2AB;
+  --color-neutral-400: #A8A29E;
+  --color-neutral-500: #8B8783;
+  --color-neutral-600: #78736E;
+  --color-neutral-700: #57534E;
+  --color-neutral-800: #3C352E;
+  --color-neutral-900: #292524;
+  --color-neutral-950: #1C1917;
+
+  /* ---- 1.2 Colors: Semantic ---- */
+  --color-primary: #8B5A2B;
+  --color-primary-hover: #7A4E24;
+  --color-primary-light: #D4A574;
+  --color-primary-dark: #6B4423;
+
+  --color-accent: #2D6A4F;
+  --color-accent-hover: #245A42;
+  --color-accent-light: #95D5B2;
+  --color-accent-dark: #1B4332;
+
+  --color-success: #2D6A4F;
+  --color-success-light: #C8E6C9;
+  --color-warning: #D48A3A;
+  --color-warning-light: #FFF3E0;
+  --color-error: #B33A3A;
+  --color-error-light: #FFEBEE;
+  --color-info: #4A7B9D;
+  --color-info-light: #E3F2FD;
+
+  /* ---- 1.3 Colors: Surfaces ---- */
+  --color-surface: #FFFBF5;
+  --color-surface-alt: #F5EDE3;
+  --color-surface-card: #FFFFFF;
+  --color-surface-inverted: #1C1917;
+
+  /* ---- 1.4 Colors: Text ---- */
+  --color-text-primary: #1C1917;
+  --color-text-secondary: #57534E;
+  --color-text-muted: #8B8783;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-accent: #FFFFFF;
+  --color-text-on-dark: #F5F0EB;
+  --color-text-link: #2D6A4F;
+
+  /* ---- 1.5 Colors: Borders ---- */
+  --color-border: #D6CDBE;
+  --color-border-light: #E8DFD3;
+
+  /* ---- 1.6 Colors: Shadows ---- */
+  --color-shadow: rgba(28, 25, 23, 0.08);
+  --color-shadow-md: rgba(28, 25, 23, 0.1);
+  --color-shadow-lg: rgba(28, 25, 23, 0.12);
+
+  /* ---- 1.7 Colors: Dosha ---- */
+  --color-vata: #C4956A;
+  --color-vata-light: #F5EDE3;
+  --color-pitta: #E06060;
+  --color-pitta-light: #FFEBEE;
+  --color-kapha: #40916C;
+  --color-kapha-light: #E8F5E9;
+
+  /* ============================================================
+     2. TYPOGRAPHY
+     ============================================================ */
+
+  /* ---- 2.1 Font Families ---- */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading-alt: 'EB Garamond', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-ui: 'Noto Sans', Arial, sans-serif;
+
+  /* ---- 2.2 Font Sizes (Fluid Scale) ---- */
+  --fs-display: clamp(2.5rem, 5vw, 4.5rem);
+  --fs-display-mobile: clamp(2rem, 7vw, 2.5rem);
+  --fs-h1: clamp(2rem, 3.5vw, 3rem);
+  --fs-h2: clamp(1.75rem, 2.8vw, 2.25rem);
+  --fs-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --fs-h4: clamp(1.125rem, 1.5vw, 1.375rem);
+  --fs-body-lg: clamp(1.125rem, 1.4vw, 1.25rem);
+  --fs-body: clamp(1rem, 1.2vw, 1.125rem);
+  --fs-body-sm: clamp(0.9375rem, 1vw, 1rem);
+  --fs-ui: 1rem;
+  --fs-ui-sm: 0.875rem;
+  --fs-caption: 0.75rem;
+
+  /* ---- 2.3 Line Heights ---- */
+  --lh-tight: 1.1;
+  --lh-tight-mobile: 1.15;
+  --lh-heading: 1.2;
+  --lh-subheading: 1.25;
+  --lh-body: 1.65;
+  --lh-body-lg: 1.6;
+  --lh-ui: 1.4;
+  --lh-caption: 1.4;
+
+  /* ---- 2.4 Letter Spacing ---- */
+  --ls-display: 0.02em;
+  --ls-heading-sm: 0.01em;
+  --ls-body: 0em;
+  --ls-ui: 0.01em;
+  --ls-ui-sm: 0.02em;
+
+  /* ---- 2.5 Font Weights ---- */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ============================================================
+     3. SPACING SCALE (4px base)
+     ============================================================ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ============================================================
+     4. BORDER RADIUS
+     ============================================================ */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Button-specific ---- */
+  --radius-button: 8px;
+  --radius-card: 12px;
+  --radius-input: 8px;
+  --radius-badge: 9999px;
+
+  /* ============================================================
+     5. SHADOWS
+     ============================================================ */
+  --shadow-sm: 0 1px 3px var(--color-shadow);
+  --shadow-md: 0 4px 12px var(--color-shadow-md);
+  --shadow-lg: 0 8px 24px var(--color-shadow-lg);
+  --shadow-xl: 0 12px 36px var(--color-shadow-lg);
+  --shadow-2xl: 0 20px 48px var(--color-shadow-lg);
+
+  /* ---- Brand-specific ---- */
+  --shadow-button: 0 2px 8px rgba(45, 106, 79, 0.25);
+  --shadow-button-hover: 0 4px 16px rgba(45, 106, 79, 0.35);
+  --shadow-card-hover: 0 8px 24px var(--color-shadow-lg);
+  --shadow-glow-accent: 0 0 20px rgba(45, 106, 79, 0.2);
+
+  /* ============================================================
+     6. MOTION TOKENS
+     ============================================================ */
+
+  /* ---- 6.1 Durations ---- */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-hero: 700ms;
+  --duration-scroll-reveal: 600ms;
+
+  /* ---- 6.2 Easing Curves ---- */
+  --ease-emphasized-decelerate: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-emphasized-accelerate: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-standard-productive: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- 6.3 Spring Physics ---- */
+  --spring-default: 300;
+  --spring-damping: 30;
+  --spring-stiff: 400;
+  --spring-gentle: 200;
+
+  /* ============================================================
+     7. LAYOUT
+     ============================================================ */
+  --max-width: 1280px;
+  --content-padding: clamp(1.5rem, 3vw, 2.5rem);
+  --content-padding-sm: clamp(1rem, 2vw, 1.5rem);
+  --gutter-mobile: 24px;
+  --gutter-tablet: 32px;
+  --gutter-desktop: 40px;
+
+  /* ============================================================
+     8. Z-INDEX SCALE
+     ============================================================ */
+  --z-base: 0;
+  --z-above: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-navbar: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+
+  /* ============================================================
+     9. BACKGROUND TEXTURES (CSS-only)
+     ============================================================ */
+  --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, #FFFBF5 0%, #F5EDE3 100%);
+  --gradient-cta: linear-gradient(135deg, #2D6A4F 0%, #245A42 100%);
+  --gradient-accent-glow: radial-gradient(ellipse at 50% 50%, rgba(45, 106, 79, 0.15) 0%, transparent 60%);
+}
+
+/* ============================================================
+   10. DARK MODE
+   ============================================================ */
+.dark {
+  /* Colors: Primitives - dark mode shifts amber-brown to lighter, green to brighter */
+  --color-amber-50: #1C1917;
+  --color-amber-100: #292524;
+  --color-amber-200: #3C352E;
+  --color-amber-300: #57534E;
+  --color-amber-400: #78736E;
+  --color-amber-500: #A8A29E;
+  --color-amber-600: #C4956A;
+  --color-amber-700: #D4A574;
+  --color-amber-800: #A67B4A;
+  --color-amber-900: #8B5A2B;
+
+  --color-green-50: #1B4332;
+  --color-green-100: #245A42;
+  --color-green-200: #2D6A4F;
+  --color-green-300: #36805A;
+  --color-green-400: #40916C;
+  --color-green-500: #52B788;
+  --color-green-600: #74C69D;
+  --color-green-700: #95D5B2;
+  --color-green-800: #B7E4C7;
+  --color-green-900: #D8F3DC;
+
+  --color-neutral-50: #1C1917;
+  --color-neutral-100: #292524;
+  --color-neutral-200: #3C352E;
+  --color-neutral-300: #57534E;
+  --color-neutral-400: #78736E;
+  --color-neutral-500: #A8A29E;
+  --color-neutral-600: #B8B2AB;
+  --color-neutral-700: #D6D0C9;
+  --color-neutral-800: #E8E3DD;
+  --color-neutral-900: #F5F0EB;
+  --color-neutral-950: #FFFBF5;
+
+  /* Colors: Semantic (Dark) */
+  --color-primary: #A67B4A;
+  --color-primary-hover: #936D3E;
+  --color-primary-light: #C4956A;
+  --color-primary-dark: #6B4423;
+
+  --color-accent: #40916C;
+  --color-accent-hover: #36805A;
+  --color-accent-light: #74C69D;
+  --color-accent-dark: #1B4332;
+
+  --color-success: #52B788;
+  --color-success-light: #1B4332;
+  --color-warning: #EAAA5E;
+  --color-warning-light: #3C2E1A;
+  --color-error: #E06060;
+  --color-error-light: #3A1A1A;
+  --color-info: #6B9FC0;
+  --color-info-light: #1A2A3A;
+
+  /* Colors: Surfaces (Dark) */
+  --color-surface: #1C1917;
+  --color-surface-alt: #292524;
+  --color-surface-card: #2A2725;
+  --color-surface-inverted: #FFFBF5;
+
+  /* Colors: Text (Dark) */
+  --color-text-primary: #F5F0EB;
+  --color-text-secondary: #A8A29E;
+  --color-text-muted: #78736E;
+  --color-text-on-primary: #1C1917;
+  --color-text-on-accent: #FFFFFF;
+  --color-text-on-dark: #1C1917;
+  --color-text-link: #52B788;
+
+  /* Colors: Borders (Dark) */
+  --color-border: #3C352E;
+  --color-border-light: #2A2520;
+
+  /* Colors: Shadows (Dark) */
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-md: rgba(0, 0, 0, 0.3);
+  --color-shadow-lg: rgba(0, 0, 0, 0.4);
+
+  /* Dosha (Dark) */
+  --color-vata: #D4A574;
+  --color-vata-light: #3C352E;
+  --color-pitta: #E06060;
+  --color-pitta-light: #3A1A1A;
+  --color-kapha: #52B788;
+  --color-kapha-light: #1B4332;
+
+  /* Shadow overrides */
+  --shadow-button: 0 2px 8px rgba(64, 144, 108, 0.35);
+  --shadow-button-hover: 0 4px 16px rgba(64, 144, 108, 0.5);
+  --shadow-card-hover: 0 8px 24px var(--color-shadow-lg);
+  --shadow-glow-accent: 0 0 20px rgba(64, 144, 108, 0.3);
+
+  /* Gradient overrides */
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, #292524 0%, #1C1917 100%);
+  --gradient-cta: linear-gradient(135deg, #40916C 0%, #2D6A4F 100%);
+  --gradient-accent-glow: radial-gradient(ellipse at 50% 50%, rgba(64, 144, 108, 0.2) 0%, transparent 60%);
+}
+
+/* ============================================================
+   11. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

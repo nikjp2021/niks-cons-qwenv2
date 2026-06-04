@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "buildPassed": true,
+  "pagesScaffolded": ["/", "/consultation", "/about", "/blog", "/blog/[slug]", "/faq", "/contact"],
+  "componentsCreated": [
+    "Navbar", "Footer", "SkipLink",
+    "Button", "Card", "Badge", "Container", "Section", "SectionLabel",
+    "DoshaCard", "TestimonialCard", "PractitionerCard", "PricingCard",
+    "BlogCard", "FAQAccordion", "EcosystemLink", "NewsletterForm", "SearchInput",
+    "ScrollReveal", "StaggerContainer", "StaggerItem", "SpringHover"
+  ],
+  "dataFilesCreated": [
+    "navigation", "doshas", "testimonials", "faq", "consultations",
+    "practitioners", "blog", "ecosystem"
+  ],
+  "errors": []
+}

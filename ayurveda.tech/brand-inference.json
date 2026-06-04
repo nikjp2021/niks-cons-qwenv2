@@ -1,0 +1,105 @@
+{
+  "brandName": "Ayurveda.Tech",
+  "tagline": "Ancient Wisdom for Modern Wellness",
+  "description": "Your one-stop destination for expert-guided Ayurvedic wellness, delivered digitally",
+  "brandPersonality": ["grounded", "progressive", "trusted"],
+  "colors": {
+    "primary": "#8B5A2B",
+    "primaryDark": "#6B4423",
+    "accent": "#2D6A4F",
+    "accentDark": "#1B4332",
+    "hasDarkMode": false,
+    "paletteDirection": "Warm earthy amber-brown primary with rich forest green accent — classic Ayurvedic healing palette blending earth (rootedness) and nature (vitality)"
+  },
+  "typography": {
+    "headingFonts": ["Playfair Display", "EB Garamond", "Lora"],
+    "bodyFont": "Noto Sans",
+    "analysis": "Serif-heavy heading stack (Playfair Display signals heritage/luxury, EB Garamond signals tradition/authority, Lora signals readability) paired with clean Noto Sans body. The serif-to-sans-serif bridge mirrors the ancient-to-modern brand promise."
+  },
+  "targetAudience": "Health-conscious individuals seeking authentic Ayurvedic wellness guidance online, plus Ayurvedic practitioners and consultants looking for a digital platform to offer consultations and grow their practice",
+  "targetAudienceBreakdown": {
+    "primary": "Wellness-seeking individuals aged 25–55 interested in holistic health, alternative medicine, and personalized Ayurvedic consultations delivered remotely",
+    "secondary": "Ayurvedic practitioners, wellness consultants, and traditional healers seeking a technology platform to reach clients, manage bookings, and digitize their practice",
+    "signals": [
+      "Two-sided marketplace with distinct client and consultant portals",
+      "Language around 'expert-guided' and 'professional' signals B2C trust-building",
+      "Pitta/Vata/Kapha dosha education suggests audience familiar with or curious about Ayurveda fundamentals",
+      ".tech domain signals tech-savvy positioning despite traditional subject matter"
+    ]
+  },
+  "conversionGoal": "consult-booking",
+  "conversionDetails": {
+    "primaryCta": "Register / Get Started",
+    "clientPath": "Register/Login on client.ayurveda.tech to book a consultation",
+    "consultantPath": "Join/Login on consultant.ayurveda.tech to offer services",
+    "secondaryCtas": ["Login", "Join Us", "Book Consultation", "Explore Library"],
+    "analysis": "Dual-path conversion model — visitors choose their role (client or consultant) at the point of entry. This reduces friction but risks decision paralysis if value propositions aren't immediately clear for each path."
+  },
+  "tone": "warm-authoritative",
+  "toneAnalysis": {
+    "formality": "Professional but inviting — mixes educational authority ('Ancient Wisdom') with accessible language ('Modern Wellness')",
+    "contractions": "Likely minimal given professional Ayurvedic positioning",
+    "jargon": "Uses Ayurvedic terminology (Vata, Pitta, Kapha, dosha) positioning the brand as knowledgeable insider, not a generic wellness site",
+    "emotionalAppeal": "Aspirational + Trust — appeals to desire for holistic well-being while emphasizing expert guidance",
+    "voice": "The wise guide — knowledgeable, reassuring, bridge-builder between old and new"
+  },
+  "stylePreferences": [
+    "Serif-dominant typography (Playfair Display, EB Garamond) paired with clean sans-serif body text — heritage meets modern clarity",
+    "Warm earthy color palette with amber-brown and forest green — grounded, natural, healing-focused",
+    "Content-forward layout with dosha education, consultation pathways, and wellness library — knowledge as conversion driver"
+  ],
+  "keyDifferentiators": [
+    "Bridges ancient Ayurvedic wisdom with modern .tech digital delivery",
+    "Two-sided marketplace connecting clients AND practitioners on one platform",
+    "Dedicated subdomain ecosystem (client portal, consultant portal, library, support desk)",
+    "Expert-guided approach with professional consultant vetting (not a directory, a managed platform)",
+    "Global Ayurveda Library (ayurvedalibrary.org) as an educational moat and SEO asset"
+  ],
+  "ecosystemMap": {
+    "clientPortal": "client.ayurveda.tech — Login/Register for consultations",
+    "consultantPortal": "consultant.ayurveda.tech — Login/Join for practitioners",
+    "knowledgeBase": "santhigramfoundation.freshdesk.com — FAQ and support",
+    "library": "ayurvedalibrary.org — Global Online Ayurveda Library",
+    "store": "explore.santhigramayurveda.com — Product/storefront"
+  },
+  "gaps": [
+    "No extracted page-data available — individual page extractions were not completed, limiting depth of color, CTA, and schema analysis",
+    "No visible testimonials, case studies, or social proof on homepage — 'Real Conversations' section exists but lacks concrete customer stories with outcomes",
+    "Pricing information not visible — visitors cannot determine consultation costs before committing to registration",
+    "No blog or content marketing engine — only one blog post exists, missing SEO growth opportunity",
+    "Multiple draft/unused homepage versions (15+ drafts detected) suggest site is in prolonged redesign limbo",
+    "FAQ redirects to external Freshdesk — breaks user experience and on-site engagement",
+    "No clear practitioner value proposition homepage section — 'For Consultants' CTA lacks context on why practitioners should join",
+    "Likely missing JSON-LD schema (LocalBusiness, MedicalBusiness, HealthAndBeautyBusiness) for enhanced search visibility",
+    "Likely missing analytics tracking setup — no evidence of GA, Pixel, or event tracking",
+    "No mobile-responsive indicators detected — critical for health/wellness audience browsing on mobile",
+    "No OG/social meta tags evident for social sharing optimization",
+    "Terms & Privacy pages likely present but no About/Team page to build trust and humanize the brand",
+    "Dual CTA (Client vs Consultant) on homepage without clarifying copy may cause visitor confusion and bounce",
+    "No email capture or newsletter signup for retargeting and audience building",
+    "One blog post is dated 2025 with no content cadence — content marketing and topical authority are unaddressed"
+  ],
+  "opportunities": [
+    "Build a structured content engine around dosha types (Vata/Pitta/Kapha), seasonal routines, and wellness guides — high-intent SEO topics",
+    "Add a 'How It Works' step-by-step for both clients and consultants to clarify the dual conversion paths",
+    "Integrate Freshdesk FAQ on-site rather than redirecting — or embed via iframe/widget",
+    "Publish practitioner profiles and success stories as social proof",
+    "Create an About page featuring founders/practitioners to build trust in this health-adjacent space",
+    "Add transparent pricing tiers or consultation packages",
+    "Implement schema markup (HealthAndBeautyBusiness, Physician, FAQ) for rich search results"
+  ],
+  "dataConfidence": "medium",
+  "evidence": {
+    "brandName": "Found in domain, brand_identity.name, and page titles",
+    "tagline": "Found in brand_identity.tagline and cited on homepage hero",
+    "brandPersonality": "Inferred from font pairing (serif heritage + sans-serif modernity), two-sided marketplace model, brand language bridging ancient and tech",
+    "typography": "Extracted from page metadata — Lora, Noto Sans, EB Garamond, Playfair Display detected in use",
+    "primaryColor": "Inferred from Ayurvedic brand category — earth tones (amber-brown) and healing greens are standard for this vertical; no actual CSS was extractable from empty page-data directory",
+    "accentColor": "Inferred as forest green — complements earth-tone primary for vitality/nature alignment",
+    "conversionGoal": "Derived from dual CTA structure (Register/Login client vs Join/Login consultant) — core action is consultation booking",
+    "targetAudience": "Derived from two-sided marketplace structure, dosha terminology, and 'expert-guided' language",
+    "tone": "Derived from tagline language balance ('Ancient Wisdom' + 'Modern Wellness'), professional Ayurvedic terminology, and .tech domain positioning",
+    "stylePreferences": "Inferred from font stack analysis, brand category (Ayurvedic wellness), and dual-portal ecosystem structure",
+    "gaps": "Identified through comparison of current site state against conversion-optimized health/wellness site standards; page-data extraction was incomplete (empty directory)"
+  }
+}
