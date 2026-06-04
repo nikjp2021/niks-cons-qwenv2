@@ -17,7 +17,7 @@ export function TextReveal({ children, className, delay = 0, staggerDelay = 0.04
   return (
     <Tag className={className}>
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.25em] last:mr-0">
+        <span key={i} className="inline-block overflow-hidden" style={{ marginRight: '0.3em' }}>
           <motion.span
             className="inline-block"
             initial={{ y: '110%', opacity: 0 }}
@@ -28,7 +28,7 @@ export function TextReveal({ children, className, delay = 0, staggerDelay = 0.04
               ease: [0.16, 1, 0.3, 1],
             }}
           >
-            {word}
+            {word}{i < words.length - 1 ? '\u00A0' : ''}
           </motion.span>
         </span>
       ))}
