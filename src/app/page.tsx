@@ -77,8 +77,9 @@ export default function Home() {
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[var(--surface-0)]/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--surface-0)] via-[var(--surface-0)]/90 to-transparent" />
+          <div className="absolute inset-0 bg-[var(--surface-0)]/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--surface-0)]/95 via-[var(--surface-0)]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-0)] via-transparent to-[var(--surface-0)]/30" />
         </div>
 
         <GradientOrb color="rgba(20, 184, 166, 0.12)" size={700} top="-200px" left="-200px" delay={0.5} />
@@ -187,15 +188,15 @@ export default function Home() {
       </section>
 
       {/* ===== MARQUEE ===== */}
-      <section className="py-6 border-y border-[var(--surface-3)]/30 bg-[var(--surface-1)]/50">
+      <section className="py-5 border-y border-[var(--surface-3)]/20 bg-[var(--surface-1)]/30">
         <Marquee speed={35}>
           {[
             'AI-First Consulting', 'Digital Transformation', 'Agentic AI', 'Automation',
             'Web Development', 'Social Media Strategy', 'Agile Management', 'Growth Engineering',
           ].map((item) => (
-            <span key={item} className="inline-flex items-center gap-4 mx-6 text-sm font-medium text-[var(--text-400)] uppercase tracking-widest">
+            <span key={item} className="inline-flex items-center gap-4 mx-6 text-sm text-[var(--text-500)]">
               {item}
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-500)]/40" />
+              <span className="w-1 h-1 rounded-full bg-[var(--surface-4)]" />
             </span>
           ))}
         </Marquee>
