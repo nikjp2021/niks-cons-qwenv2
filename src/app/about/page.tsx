@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight, ExternalLink, Globe, Bot, Kanban, Zap, Cloud, BarChart3 } from 'lucide-react';
+import { ArrowRight, Globe, Bot, Kanban, Zap, Cloud, BarChart3 } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerChildren';
 import { Counter } from '@/components/animations/Counter';
@@ -22,14 +22,15 @@ const expertiseIcons: Record<string, React.ReactNode> = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero — Asymmetric with image */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      {/* Hero */}
+      <section className="relative pt-32 pb-20 overflow-hidden hero-gradient">
         <GradientOrb color="rgba(20, 184, 166, 0.08)" size={600} top="-200px" left="-200px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="relative section-container">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
             <ScrollReveal>
-              <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+              <span className="badge-pill mb-4">About Us</span>
+              <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
                 Pioneers in AI solutions & innovation
               </h1>
               <p className="text-xl text-[var(--text-300)] leading-relaxed">
@@ -51,12 +52,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Story — Text + Stats inline */}
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      {/* Company Story */}
+      <section className="section-padding">
+        <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <ScrollReveal>
-              <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-6 text-[var(--text-100)]">
+              <span className="badge-pill mb-4">Our Story</span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-6 text-[var(--text-100)]">
                 Empowering businesses through AI & technology
               </h2>
               <div className="space-y-5 text-[var(--text-300)] leading-relaxed">
@@ -72,20 +74,20 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
 
-            {/* Stats — horizontal strip, not grid */}
+            {/* Stats */}
             <ScrollReveal delay={0.2}>
               <div className="flex flex-col gap-6">
                 {[
-                  { value: 15, suffix: '+', label: 'Countries Served', color: '#14b8a6' },
-                  { value: 50, suffix: '+', label: 'Projects Delivered', color: '#7c3aed' },
-                  { value: 10, suffix: '+', label: 'Years Experience', color: '#0ea5e9' },
-                  { value: 300, suffix: '%', label: 'Client Satisfaction', color: '#f59e0b' },
+                  { value: 15, suffix: '+', label: 'Countries Served', color: 'var(--color-brand-500)' },
+                  { value: 50, suffix: '+', label: 'Projects Delivered', color: 'var(--color-cyan)' },
+                  { value: 10, suffix: '+', label: 'Years Experience', color: 'var(--color-emerald)' },
+                  { value: 300, suffix: '%', label: 'Client Satisfaction', color: 'var(--color-amber)' },
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex items-center gap-5 p-5 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30"
+                    className="glass-card flex items-center gap-5 p-5"
                   >
-                    <div className="font-display font-black text-3xl shrink-0" style={{ color: stat.color }}>
+                    <div className="font-display font-extrabold text-3xl shrink-0" style={{ color: stat.color }}>
                       <Counter target={stat.value} suffix={stat.suffix} duration={2} />
                     </div>
                     <div className="text-sm text-[var(--text-400)]">{stat.label}</div>
@@ -97,20 +99,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision — Side by side, different colors */}
-      <section className="py-20 bg-[var(--surface-1)]/50">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      {/* Mission & Vision */}
+      <section className="section-padding bg-[var(--surface-1)]/50">
+        <div className="section-container">
           <ScrollReveal className="mb-12">
-            <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
               Mission & Vision
             </h2>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ScrollReveal>
-              <div className="p-8 rounded-2xl bg-[var(--surface-2)] border border-[var(--surface-3)]/30 h-full">
-                <div className="w-10 h-10 rounded-lg bg-[#14b8a6]/10 flex items-center justify-center mb-5">
-                  <svg className="w-5 h-5 text-[#14b8a6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="glass-card p-8 h-full">
+                <div className="w-10 h-10 rounded-lg bg-[var(--color-brand-500)]/10 flex items-center justify-center mb-5">
+                  <svg className="w-5 h-5 text-[var(--color-brand-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
@@ -122,9 +124,9 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="p-8 rounded-2xl bg-[var(--surface-2)] border border-[var(--surface-3)]/30 h-full">
-                <div className="w-10 h-10 rounded-lg bg-[#7c3aed]/10 flex items-center justify-center mb-5">
-                  <svg className="w-5 h-5 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="glass-card p-8 h-full">
+                <div className="w-10 h-10 rounded-lg bg-[var(--color-cyan)]/10 flex items-center justify-center mb-5">
+                  <svg className="w-5 h-5 text-[var(--color-cyan)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -138,9 +140,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder — Large image + bio */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      {/* Founder */}
+      <section className="section-padding">
+        <div className="section-container">
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-2">
@@ -154,8 +156,8 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="lg:col-span-3">
-                <p className="text-sm font-semibold text-[var(--color-brand-500)] mb-2">Founder</p>
-                <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-2 text-[var(--text-100)]">
+                <span className="badge-pill mb-2">Founder</span>
+                <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-2 text-[var(--text-100)]">
                   Nikhil Tiwari
                 </h2>
                 <p className="text-lg text-[var(--text-300)] mb-2">Founder & Fractional CPO</p>
@@ -169,7 +171,7 @@ export default function AboutPage() {
                   {['Agentic AI', 'Health Tech', 'Product Strategy', 'LLM Systems', 'Web3', 'PhD Research'].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--surface-2)] text-[var(--text-300)] border border-[var(--surface-3)]/30"
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium glass-card text-[var(--text-300)]"
                     >
                       {tag}
                     </span>
@@ -181,11 +183,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team — Horizontal scroll, not identical grid */}
-      <section className="py-20 bg-[var(--surface-1)]/50">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      {/* Team */}
+      <section className="section-padding bg-[var(--surface-1)]/50">
+        <div className="section-container">
           <ScrollReveal className="mb-12">
-            <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
+            <span className="badge-pill mb-4">Our Team</span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
               The people behind the innovation
             </h2>
           </ScrollReveal>
@@ -193,7 +196,7 @@ export default function AboutPage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
             {team.slice(1).map((member) => (
               <StaggerItem key={member.name}>
-                <div className="p-7 rounded-2xl bg-[var(--surface-2)] border border-[var(--surface-3)]/30 group hover:border-[var(--surface-4)] transition-all duration-500 hover:-translate-y-1">
+                <div className="glass-card p-7 group hover:border-[var(--surface-4)] transition-all duration-[var(--duration-normal)] hover:-translate-y-1">
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 font-display font-bold text-xl text-white"
                     style={{ background: member.accentColor }}
@@ -210,11 +213,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Expertise — Wrapped tags, not grid */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      {/* Expertise */}
+      <section className="section-padding">
+        <div className="section-container">
           <ScrollReveal className="mb-12">
-            <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
+            <span className="badge-pill mb-4">Expertise</span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-[var(--text-100)]">
               Areas of Expertise
             </h2>
           </ScrollReveal>
@@ -222,16 +226,16 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="flex flex-wrap gap-3">
               {[
-                { name: 'AI & Agentic AI', color: '#14b8a6' },
-                { name: 'AI Automation', color: '#0ea5e9' },
-                { name: 'Agile Scrum', color: '#f59e0b' },
-                { name: 'Digital Transformation', color: '#7c3aed' },
-                { name: 'Product Management', color: '#f43f5e' },
-                { name: 'Cloud & DevOps', color: '#10b981' },
+                { name: 'AI & Agentic AI', color: 'var(--color-brand-500)' },
+                { name: 'AI Automation', color: 'var(--color-cyan)' },
+                { name: 'Agile Scrum', color: 'var(--color-amber)' },
+                { name: 'Digital Transformation', color: 'var(--color-violet)' },
+                { name: 'Product Management', color: 'var(--color-pink)' },
+                { name: 'Cloud & DevOps', color: 'var(--color-emerald)' },
               ].map((exp) => (
                 <span
                   key={exp.name}
-                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 text-[var(--text-200)] font-medium hover:border-[var(--surface-4)] transition-all"
+                  className="inline-flex items-center gap-2.5 px-5 py-3 glass-card text-[var(--text-200)] font-medium hover:border-[var(--surface-4)] transition-all"
                 >
                   <span
                     className="w-8 h-8 rounded-lg flex items-center justify-center"

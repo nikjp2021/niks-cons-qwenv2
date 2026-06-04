@@ -56,38 +56,24 @@ export default function Home() {
     <>
       {/* Scroll Progress */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[3px] origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-[3px] origin-left"
         style={{
           scaleX,
-          background: 'linear-gradient(90deg, #14b8a6, #0d9488)',
+          background: 'var(--color-brand-500)',
+          zIndex: 'var(--z-max)',
         }}
       />
 
       {/* ═══════════════════════════════════════════════════
-          HERO — Full-bleed video, centered content
+          HERO — Gradient background, centered content
           ═══════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%2307070b'/%3E%3C/svg%3E"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+        <GradientOrb color="rgba(20, 184, 166, 0.12)" size={600} top="-200px" right="-200px" />
+        <GradientOrb color="rgba(6, 182, 212, 0.08)" size={400} bottom="-100px" left="-100px" />
 
-        {/* Scrim: dark center fades out toward edges */}
-        <div className="absolute inset-0 bg-[var(--surface-0)]/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--surface-0)/60_0%,transparent_70%)]" />
-
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-5 sm:px-8">
+        <div className="relative z-10 text-center section-container" style={{ maxWidth: 'var(--container-narrow)' }}>
           <FadeIn delay={0}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white/10 text-white/80 mb-10 border border-white/10 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-400)] animate-pulse" />
+            <span className="badge-pill mb-8">
               AI-First Consulting
             </span>
           </FadeIn>
@@ -95,7 +81,7 @@ export default function Home() {
           <div className="mb-10">
             <TextReveal
               as="h1"
-              className="font-display font-black text-[clamp(3rem,7vw,6rem)] leading-[0.9] tracking-[-0.03em] text-white"
+              className="font-display font-extrabold text-[clamp(3rem,7vw,6rem)] leading-[0.9] tracking-tight text-[var(--text-100)]"
               delay={0.2}
               staggerDelay={0.05}
             >
@@ -104,7 +90,7 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.8}>
-            <p className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-14 text-white/70">
+            <p className="text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-14 text-[var(--text-300)]">
               Digital transformation partner for startups and SMEs. Agentic AI, automation,
               and lean strategies that turn complexity into growth.
             </p>
@@ -114,14 +100,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
               <MagneticButton
                 href="/get-a-quote"
-                className="group inline-flex items-center justify-center gap-2.5 px-10 py-5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-lg hover:bg-[var(--color-brand-400)] transition-colors duration-300"
+                className="glow-button group inline-flex items-center justify-center gap-2.5 px-10 py-5 font-semibold rounded-xl text-lg"
               >
                 Get a Free Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
               <MagneticButton
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 border border-white/20 text-white font-semibold rounded-xl text-lg hover:border-white/40 hover:bg-white/5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 border border-[var(--surface-4)] text-[var(--text-200)] font-semibold rounded-xl text-lg hover:border-[var(--surface-5)] hover:bg-[var(--surface-1)] transition-all duration-[var(--duration-normal)]"
               >
                 Explore Services
               </MagneticButton>
@@ -136,10 +122,10 @@ export default function Home() {
                 { value: 50, suffix: '+', label: 'Projects' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-display font-black text-3xl sm:text-4xl text-white">
+                  <div className="font-display font-extrabold text-3xl sm:text-4xl gradient-text">
                     <Counter target={stat.value} suffix={stat.suffix} duration={2.5} />
                   </div>
-                  <div className="text-xs text-white/40 mt-1 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-xs text-[var(--text-400)] mt-1 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -152,8 +138,8 @@ export default function Home() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 rounded-full border-2 border-white/25 flex items-start justify-center p-1.5">
-            <div className="w-1 h-2.5 rounded-full bg-white/50" />
+          <div className="w-6 h-10 rounded-full border-2 border-[var(--surface-4)] flex items-start justify-center p-1.5">
+            <div className="w-1 h-2.5 rounded-full bg-[var(--text-400)]" />
           </div>
         </motion.div>
       </section>
@@ -167,7 +153,7 @@ export default function Home() {
             'AI-First Consulting', 'Digital Transformation', 'Agentic AI', 'Automation',
             'Web Development', 'Social Media Strategy', 'Agile Management', 'Growth Engineering',
           ].map((item) => (
-            <span key={item} className="inline-flex items-center gap-4 mx-6 text-sm text-[var(--text-500)]">
+            <span key={item} className="inline-flex items-center gap-4 mx-6 text-sm text-[var(--text-400)]">
               {item}
               <span className="w-1 h-1 rounded-full bg-[var(--surface-4)]" />
             </span>
@@ -176,20 +162,54 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          SERVICES — Hero feature + alternating detail rows
+          STATS — Real outcomes
           ═══════════════════════════════════════════════════ */}
-      <section className="relative py-28 lg:py-36 overflow-hidden">
-        <GradientOrb color="rgba(124, 58, 237, 0.06)" size={600} top="0" right="-200px" />
+      <section className="section-padding">
+        <div className="section-container">
+          <ScrollReveal className="mb-16">
+            <div className="text-center">
+              <span className="badge-pill mb-4">Proven Results</span>
+              <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-[var(--text-100)]">
+                Real businesses, real outcomes
+              </h2>
+            </div>
+          </ScrollReveal>
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          {/* Section header */}
-          <ScrollReveal className="mb-20">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+            {[
+              { value: 300, suffix: '%', label: 'Average ROI', color: 'var(--color-brand-500)' },
+              { value: 50, suffix: '+', label: 'Projects Delivered', color: 'var(--color-cyan)' },
+              { value: 15, suffix: '+', label: 'Countries Served', color: 'var(--color-emerald)' },
+              { value: 10, suffix: '+', label: 'Years Experience', color: 'var(--color-amber)' },
+            ].map((stat) => (
+              <StaggerItem key={stat.label}>
+                <div className="glass-card p-6 text-center">
+                  <div className="font-display font-extrabold text-4xl sm:text-5xl mb-2" style={{ color: stat.color }}>
+                    <Counter target={stat.value} suffix={stat.suffix} duration={2} />
+                  </div>
+                  <div className="text-sm text-[var(--text-400)]">{stat.label}</div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          SERVICES — 3×2 grid with glass cards
+          ═══════════════════════════════════════════════════ */}
+      <section className="section-padding relative overflow-hidden">
+        <GradientOrb color="rgba(20, 184, 166, 0.06)" size={600} top="0" right="-200px" />
+
+        <div className="relative section-container">
+          <ScrollReveal className="mb-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
               <div className="max-w-2xl">
-                <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--text-100)]">
+                <span className="badge-pill mb-4">What We Do</span>
+                <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-[var(--text-100)]">
                   AI-powered solutions for modern businesses
                 </h2>
-                <p className="text-lg text-[var(--text-300)] leading-relaxed mt-5">
+                <p className="text-lg text-[var(--text-300)] mt-5 leading-relaxed">
                   From intelligent automation to full digital transformation — we deliver measurable results, not slide decks.
                 </p>
               </div>
@@ -203,56 +223,12 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Featured service — large asymmetric */}
-          <ScrollReveal className="mb-12">
-            <Link
-              href={`/services#${services[0].id}`}
-              className="group relative block rounded-3xl overflow-hidden bg-[var(--surface-1)] border border-[var(--surface-3)]/40 hover:border-[var(--surface-4)] transition-all duration-500"
-            >
-              <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
-                <div className="relative aspect-[16/10] lg:aspect-auto">
-                  <Image
-                    src="/images/ai-automation.webp"
-                    alt="AI-powered automation workflow processing data in real-time"
-                    fill
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-10 lg:p-14 flex flex-col justify-center">
-                  <span
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                    style={{
-                      background: `color-mix(in srgb, ${services[0].accentColor} 12%, transparent)`,
-                      color: services[0].accentColor,
-                    }}
-                  >
-                    {serviceIcons[services[0].icon]}
-                  </span>
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl mb-4 text-[var(--text-100)]">
-                    {services[0].title}
-                  </h3>
-                  <p className="text-[var(--text-300)] leading-relaxed mb-8 max-w-md text-lg">
-                    {services[0].shortDesc}
-                  </p>
-                  <span
-                    className="inline-flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all"
-                    style={{ color: services[0].accentColor }}
-                  >
-                    Explore this service
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </ScrollReveal>
-
-          {/* Remaining services — varied 2-col grid */}
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6" staggerDelay={0.06}>
-            {services.slice(1).map((service) => (
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
+            {services.map((service) => (
               <StaggerItem key={service.id}>
                 <Link
                   href={`/services#${service.id}`}
-                  className="group relative block p-8 rounded-2xl bg-[var(--surface-1)] border border-[var(--surface-3)]/40 hover:border-[var(--surface-4)] transition-all duration-500 hover:-translate-y-1 overflow-hidden h-full"
+                  className="group relative block p-8 glass-card hover:border-[var(--surface-4)] transition-all duration-[var(--duration-normal)] hover:-translate-y-1 overflow-hidden h-full"
                 >
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -262,7 +238,7 @@ export default function Home() {
                   />
                   <div className="relative">
                     <span
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-[var(--duration-normal)]"
                       style={{
                         background: `color-mix(in srgb, ${service.accentColor} 12%, transparent)`,
                         color: service.accentColor,
@@ -277,7 +253,7 @@ export default function Home() {
                       {service.shortDesc}
                     </p>
                     <span
-                      className="inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-300 group-hover:gap-2.5"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-[var(--duration-normal)] group-hover:gap-2.5"
                       style={{ color: service.accentColor }}
                     >
                       Learn more
@@ -292,14 +268,14 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          TOOLS — Split layout
+          TOOLS — Integrated ecosystem
           ═══════════════════════════════════════════════════ */}
-      <section className="relative py-24 lg:py-32 border-y border-[var(--surface-3)]/20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="section-padding border-y border-[var(--surface-3)]/20 overflow-hidden">
+        <div className="section-container">
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
             <ScrollReveal>
-              <p className="text-sm font-semibold text-[var(--color-brand-500)] mb-4">Integrated ecosystem</p>
-              <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
+              <span className="badge-pill mb-4">Integrated Ecosystem</span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
                 The tools you already use, supercharged with AI
               </h2>
               <p className="text-[var(--text-300)] leading-relaxed mb-10 text-lg">
@@ -309,7 +285,7 @@ export default function Home() {
                 {tools.map((tool) => (
                   <span
                     key={tool.name}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--surface-1)] border border-[var(--surface-3)]/30 text-[var(--text-300)] text-sm font-medium hover:border-[var(--surface-4)] hover:text-[var(--text-200)] transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 glass-card text-[var(--text-300)] text-sm font-medium hover:border-[var(--surface-4)] hover:text-[var(--text-200)] transition-all"
                   >
                     {toolIcons[tool.icon]}
                     {tool.name}
@@ -334,12 +310,13 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           PROCESS — 4-step with connecting line
           ═══════════════════════════════════════════════════ */}
-      <section className="relative py-28 lg:py-36 overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
         <GradientOrb color="rgba(245, 158, 11, 0.05)" size={500} bottom="-100px" left="-200px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="mb-20 max-w-2xl">
-            <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--text-100)]">
+        <div className="relative section-container">
+          <ScrollReveal className="mb-16 max-w-2xl">
+            <span className="badge-pill mb-4">Our Process</span>
+            <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-[var(--text-100)]">
               How we work
             </h2>
             <p className="text-lg text-[var(--text-300)] mt-5 leading-relaxed">
@@ -383,16 +360,17 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          CASE STUDIES — 2-col large cards
+          CASE STUDIES — Featured results
           ═══════════════════════════════════════════════════ */}
-      <section className="relative py-28 lg:py-36 bg-[var(--surface-1)]/50 overflow-hidden">
+      <section className="section-padding bg-[var(--surface-1)]/50 relative overflow-hidden">
         <GradientOrb color="rgba(244, 63, 94, 0.05)" size={500} top="-100px" right="-200px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-20">
+        <div className="relative section-container">
+          <ScrollReveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
             <div className="max-w-2xl">
-              <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--text-100)]">
-                Real businesses, real outcomes
+              <span className="badge-pill mb-4">Case Studies</span>
+              <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-[var(--text-100)]">
+                Success stories
               </h2>
               <p className="text-lg text-[var(--text-300)] leading-relaxed mt-5">
                 See how AI-powered solutions have transformed operations and driven growth for our clients.
@@ -408,7 +386,7 @@ export default function Home() {
           </ScrollReveal>
 
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6" staggerDelay={0.1}>
-            {caseStudies.map((cs, i) => {
+            {caseStudies.slice(0, 4).map((cs, i) => {
               const images = [
                 '/images/workspace.webp',
                 '/images/team-collab.webp',
@@ -425,7 +403,7 @@ export default function Home() {
                 <StaggerItem key={cs.id}>
                   <Link
                     href={`/case-studies#${cs.id}`}
-                    className="group block rounded-2xl overflow-hidden bg-[var(--surface-2)] border border-[var(--surface-3)]/30 hover:border-[var(--surface-4)] transition-all duration-500 hover:-translate-y-1 h-full"
+                    className="group block rounded-2xl overflow-hidden glass-card hover:border-[var(--surface-4)] transition-all duration-[var(--duration-normal)] hover:-translate-y-1 h-full"
                   >
                     <div className="relative aspect-[16/10]">
                       <Image
@@ -470,121 +448,95 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          TESTIMONIALS — Big quote + mini cards
+          TESTIMONIALS — Social proof
           ═══════════════════════════════════════════════════ */}
-      <section className="relative py-28 lg:py-36 overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
         <GradientOrb color="rgba(16, 185, 129, 0.05)" size={500} bottom="-100px" right="-100px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 lg:gap-24 items-center">
-            {/* Image */}
-            <ScrollReveal className="hidden lg:block">
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-                <Image
-                  src="/images/team-collab.webp"
-                  alt="Client team celebrating successful AI implementation"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </ScrollReveal>
+        <div className="relative section-container">
+          <ScrollReveal className="mb-16 text-center">
+            <span className="badge-pill mb-4">Testimonials</span>
+            <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-[var(--text-100)]">
+              What our clients say
+            </h2>
+            <p className="text-lg text-[var(--text-300)] mt-5 max-w-2xl mx-auto">
+              Don&apos;t just take our word for it — hear from the businesses we&apos;ve helped transform.
+            </p>
+          </ScrollReveal>
 
-            {/* Quote */}
-            <ScrollReveal>
-              <Quote className="w-14 h-14 text-[var(--color-brand-500)]/20 mb-8" />
-              <blockquote className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-[var(--text-100)] mb-10">
-                &ldquo;{testimonials[0].content}&rdquo;
-              </blockquote>
-
-              <div className="flex items-center gap-4 mb-12">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold"
-                  style={{ background: testimonials[0].accentColor }}
-                >
-                  {testimonials[0].name.split(' ').map((n) => n[0]).join('')}
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-[var(--text-100)]">{testimonials[0].name}</div>
-                  <div className="text-xs text-[var(--text-400)]">{testimonials[0].role}, {testimonials[0].company}</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                {testimonials.slice(1).map((t) => (
-                  <div key={t.id} className="flex-1 p-5 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30">
-                    <div className="flex gap-0.5 mb-3">
-                      {Array.from({ length: t.rating }).map((_, j) => (
-                        <Star key={j} className="w-3.5 h-3.5 fill-[var(--color-amber)] text-[var(--color-amber)]" />
-                      ))}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
+            {testimonials.map((t) => (
+              <StaggerItem key={t.id}>
+                <div className="glass-card p-7 h-full flex flex-col">
+                  <div className="flex gap-0.5 mb-4">
+                    {Array.from({ length: t.rating }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-[var(--color-amber)] text-[var(--color-amber)]" />
+                    ))}
+                  </div>
+                  <Quote className="w-8 h-8 text-[var(--color-brand-500)]/20 mb-4" />
+                  <p className="text-[var(--text-300)] leading-relaxed mb-6 flex-1">
+                    &ldquo;{t.content}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-[var(--surface-3)]/30">
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
+                      style={{ background: t.accentColor }}
+                    >
+                      {t.name.split(' ').map((n) => n[0]).join('')}
                     </div>
-                    <p className="text-sm text-[var(--text-300)] leading-relaxed mb-3">
-                      &ldquo;{t.content.slice(0, 100)}...&rdquo;
-                    </p>
-                    <div className="text-xs text-[var(--text-400)]">
-                      <span className="font-semibold text-[var(--text-200)]">{t.name}</span>, {t.company}
+                    <div>
+                      <div className="text-sm font-semibold text-[var(--text-100)]">{t.name}</div>
+                      <div className="text-xs text-[var(--text-400)]">{t.role}, {t.company}</div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          CTA — Asymmetric with image
+          FINAL CTA — Conversion focused
           ═══════════════════════════════════════════════════ */}
-      <section className="relative py-28 lg:py-36 overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--surface-0)] via-[var(--surface-1)] to-[var(--surface-0)]" />
         <GradientOrb color="rgba(20, 184, 166, 0.08)" size={600} top="50%" left="-100px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="relative section-container">
           <ScrollReveal>
-            <div className="relative rounded-3xl border border-[var(--surface-3)]/30 overflow-hidden">
-              <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
-                <div className="relative p-10 sm:p-16 lg:p-20">
-                  <h2 className="font-display font-black text-4xl sm:text-5xl tracking-tight mb-6 text-[var(--text-100)]">
-                    Ready to build something extraordinary?
-                  </h2>
-                  <p className="text-lg leading-relaxed text-[var(--text-300)] mb-12 max-w-lg">
-                    Book a free consultation. We&apos;ll show you exactly how AI can transform your operations.
-                  </p>
+            <div className="glass-card p-10 sm:p-16 lg:p-20 text-center">
+              <span className="badge-pill mb-6">Ready to Start?</span>
+              <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-6 text-[var(--text-100)]">
+                Ready to build something extraordinary?
+              </h2>
+              <p className="text-lg leading-relaxed text-[var(--text-300)] mb-12 max-w-lg mx-auto">
+                Book a free consultation. We&apos;ll show you exactly how AI can transform your operations and accelerate growth.
+              </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                    <MagneticButton
-                      href="/get-a-quote"
-                      className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-base hover:bg-[var(--color-brand-400)] transition-colors duration-300"
-                    >
-                      Get a Free Quote
-                      <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
-                    </MagneticButton>
-                    <MagneticButton
-                      href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--surface-4)] text-[var(--text-200)] font-semibold rounded-xl text-base hover:border-[var(--surface-5)] transition-all duration-300"
-                    >
-                      Get in Touch
-                    </MagneticButton>
-                  </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <MagneticButton
+                  href="/get-a-quote"
+                  className="glow-button group inline-flex items-center justify-center gap-2.5 px-8 py-4 font-semibold rounded-xl text-base"
+                >
+                  Get a Free Quote
+                  <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
+                </MagneticButton>
+                <MagneticButton
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--surface-4)] text-[var(--text-200)] font-semibold rounded-xl text-base hover:border-[var(--surface-5)] transition-all duration-[var(--duration-normal)]"
+                >
+                  Get in Touch
+                </MagneticButton>
+              </div>
 
-                  <div className="flex flex-wrap gap-6 text-sm text-[var(--text-400)]">
-                    {['Free consultation', 'No commitment', 'Response within 24h'].map((badge) => (
-                      <span key={badge} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-[var(--color-emerald)]" />
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="hidden lg:block relative">
-                  <Image
-                    src="/images/data-analytics.webp"
-                    alt="Data analytics dashboard showing AI-powered business insights"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--surface-1)]/60 to-transparent" />
-                </div>
+              <div className="flex flex-wrap gap-6 justify-center text-sm text-[var(--text-400)]">
+                {['Free consultation', 'No commitment', 'Response within 24h'].map((badge) => (
+                  <span key={badge} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[var(--color-emerald)]" />
+                    {badge}
+                  </span>
+                ))}
               </div>
             </div>
           </ScrollReveal>

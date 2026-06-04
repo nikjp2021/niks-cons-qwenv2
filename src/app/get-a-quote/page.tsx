@@ -12,10 +12,10 @@ import { Input, Textarea, Select } from '@/components/ui/FormElements';
 const steps = ['Your Info', 'Business', 'Project'];
 
 const processItems = [
-  { icon: <FileText className="w-5 h-5" />, title: 'Review', desc: 'We review your project details within 24 hours.', color: '#14b8a6' },
-  { icon: <Phone className="w-5 h-5" />, title: 'Consultation', desc: 'We schedule a free call to discuss your needs.', color: '#0ea5e9' },
-  { icon: <CheckCircle2 className="w-5 h-5" />, title: 'Proposal', desc: 'You receive a detailed proposal with pricing.', color: '#7c3aed' },
-  { icon: <Rocket className="w-5 h-5" />, title: 'Kickoff', desc: 'Once approved, we begin your project immediately.', color: '#f59e0b' },
+  { icon: <FileText className="w-5 h-5" />, title: 'Review', desc: 'We review your project details within 24 hours.', color: 'var(--color-brand-500)' },
+  { icon: <Phone className="w-5 h-5" />, title: 'Consultation', desc: 'We schedule a free call to discuss your needs.', color: 'var(--color-cyan)' },
+  { icon: <CheckCircle2 className="w-5 h-5" />, title: 'Proposal', desc: 'You receive a detailed proposal with pricing.', color: 'var(--color-violet)' },
+  { icon: <Rocket className="w-5 h-5" />, title: 'Kickoff', desc: 'Once approved, we begin your project immediately.', color: 'var(--color-amber)' },
 ];
 
 export default function GetAQuotePage() {
@@ -29,14 +29,15 @@ export default function GetAQuotePage() {
 
   return (
     <>
-      {/* Hero — Asymmetric with image */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <GradientOrb color="rgba(124, 58, 237, 0.08)" size={500} top="-200px" left="-100px" />
+      {/* Hero */}
+      <section className="relative pt-32 pb-16 overflow-hidden hero-gradient">
+        <GradientOrb color="rgba(20, 184, 166, 0.08)" size={500} top="-200px" left="-100px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="relative section-container">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
             <ScrollReveal>
-              <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+              <span className="badge-pill mb-4">Get Started</span>
+              <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
                 Get a free quote
               </h1>
               <p className="text-xl text-[var(--text-300)] leading-relaxed">
@@ -59,13 +60,13 @@ export default function GetAQuotePage() {
       </section>
 
       {/* Form + Process */}
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="section-padding">
+        <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="p-12 rounded-2xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 text-center">
+                <div className="glass-card p-12 text-center">
                   <div className="w-20 h-20 rounded-full bg-[var(--color-emerald)]/10 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-10 h-10 text-[var(--color-emerald)]" />
                   </div>
@@ -91,7 +92,7 @@ export default function GetAQuotePage() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-2xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30">
+                <form onSubmit={handleSubmit} className="glass-card p-8 sm:p-10">
                   <div className="flex items-center justify-between mb-8">
                     <div>
                       <h2 className="font-display font-bold text-2xl text-[var(--text-100)]">Quote Request</h2>
@@ -177,7 +178,7 @@ export default function GetAQuotePage() {
                       <button
                         type="button"
                         onClick={() => setCurrentStep(s => s + 1)}
-                        className="group inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-sm hover:bg-[var(--color-brand-400)] transition-colors"
+                        className="glow-button group inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl text-sm text-white"
                       >
                         Next Step
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -185,7 +186,7 @@ export default function GetAQuotePage() {
                     ) : (
                       <MagneticButton
                         type="submit"
-                        className="group inline-flex items-center gap-2.5 px-8 py-3.5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-sm hover:bg-[var(--color-brand-600)] transition-colors"
+                        className="glow-button group inline-flex items-center gap-2.5 px-8 py-3.5 font-semibold rounded-xl text-sm text-white"
                       >
                         Submit Quote Request
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -200,10 +201,10 @@ export default function GetAQuotePage() {
             <div className="lg:col-span-2">
               <div className="space-y-6">
                 {/* What Happens Next */}
-                <div className="p-7 rounded-2xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30">
+                <div className="glass-card p-7">
                   <h3 className="font-display font-bold text-lg mb-6 text-[var(--text-100)]">What happens next?</h3>
                   <div className="space-y-5">
-                    {processItems.map((item, i) => (
+                    {processItems.map((item) => (
                       <div key={item.title} className="flex gap-4">
                         <div
                           className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
@@ -223,7 +224,7 @@ export default function GetAQuotePage() {
                 </div>
 
                 {/* Assurances */}
-                <div className="p-7 rounded-2xl bg-[var(--surface-2)] border border-[var(--color-brand-500)]/20">
+                <div className="glass-card p-7 border-[var(--color-brand-500)]/20">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckCircle2 className="w-5 h-5 text-[var(--color-brand-500)]" />
                     <span className="font-semibold text-[var(--text-100)]">100% Satisfaction</span>
@@ -237,7 +238,7 @@ export default function GetAQuotePage() {
                 <div className="space-y-3">
                   <a
                     href="#"
-                    className="flex items-center gap-3 p-4 rounded-xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 hover:border-[var(--surface-4)] transition-all text-sm font-medium text-[var(--text-200)]"
+                    className="glass-card flex items-center gap-3 p-4 hover:border-[var(--surface-4)] transition-all text-sm font-medium text-[var(--text-200)]"
                   >
                     <Phone className="w-4 h-4 text-[var(--text-400)]" />
                     Schedule a Call

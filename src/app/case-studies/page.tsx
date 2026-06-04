@@ -31,12 +31,13 @@ export default function CaseStudiesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden hero-gradient">
         <GradientOrb color="rgba(244, 63, 94, 0.08)" size={500} top="-200px" right="-100px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="relative section-container">
           <ScrollReveal className="max-w-3xl">
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+            <span className="badge-pill mb-4">Case Studies</span>
+            <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
               Real businesses, real outcomes
             </h1>
             <p className="text-xl text-[var(--text-300)] leading-relaxed">
@@ -47,8 +48,8 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Case Studies — Alternating layouts */}
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="section-padding">
+        <div className="section-container">
           <StaggerContainer className="space-y-8" staggerDelay={0.08}>
             {caseStudies.map((cs, i) => {
               const isEven = i % 2 === 0;
@@ -56,7 +57,7 @@ export default function CaseStudiesPage() {
                 <StaggerItem key={cs.id}>
                   <div
                     id={cs.id}
-                    className="scroll-mt-28 relative rounded-3xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 overflow-hidden group hover:border-[var(--surface-4)] transition-all duration-500"
+                    className="scroll-mt-28 relative rounded-3xl glass-card overflow-hidden group hover:border-[var(--surface-4)] transition-all duration-[var(--duration-normal)]"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                       {/* Image — alternates sides */}
@@ -87,11 +88,11 @@ export default function CaseStudiesPage() {
                       {/* Content */}
                       <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
                         <div className="flex items-center gap-2 mb-4">
-                          <span className="text-xs text-[var(--text-500)]">{cs.location}</span>
+                          <span className="text-xs text-[var(--text-400)]">{cs.location}</span>
                           <span className="text-lg">{cs.icon}</span>
                         </div>
 
-                        <h2 className="font-display font-black text-2xl sm:text-3xl tracking-tight mb-4 text-[var(--text-100)]">
+                        <h2 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-4 text-[var(--text-100)]">
                           {cs.title}
                         </h2>
 
@@ -131,13 +132,14 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Bottom CTA — Asymmetric */}
-      <section className="py-20 lg:py-28 bg-[var(--surface-1)]/50">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      {/* Bottom CTA */}
+      <section className="section-padding bg-[var(--surface-1)]/50">
+        <div className="section-container">
           <ScrollReveal>
             <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
               <div>
-                <h2 className="font-display font-black text-4xl sm:text-5xl tracking-tight mb-5 text-[var(--text-100)]">
+                <span className="badge-pill mb-4">Start Your Project</span>
+                <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5 text-[var(--text-100)]">
                   Want to be our next success story?
                 </h2>
                 <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8 max-w-xl">
@@ -145,7 +147,7 @@ export default function CaseStudiesPage() {
                 </p>
                 <MagneticButton
                   href="/get-a-quote"
-                  className="group inline-flex items-center gap-2.5 px-10 py-5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-lg hover:bg-[var(--color-brand-400)] transition-colors"
+                  className="glow-button group inline-flex items-center gap-2.5 px-10 py-5 font-semibold rounded-xl text-lg text-white"
                 >
                   Start Your Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

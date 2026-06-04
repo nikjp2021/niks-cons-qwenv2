@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Brain, Bot, Zap, Globe, Share2, Kanban, CheckCircle2 } from 'lucide-react';
@@ -40,26 +39,26 @@ const serviceAlts = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero — Left-aligned, asymmetric */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      {/* Hero */}
+      <section className="relative pt-32 pb-20 overflow-hidden hero-gradient">
         <GradientOrb color="rgba(20, 184, 166, 0.1)" size={600} top="-200px" left="-200px" />
-        <GradientOrb color="rgba(124, 58, 237, 0.06)" size={400} bottom="-100px" right="-100px" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="relative section-container">
           <ScrollReveal className="max-w-3xl">
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
-              Our Services
+            <span className="badge-pill mb-4">Our Services</span>
+            <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
+              AI-powered solutions for modern businesses
             </h1>
             <p className="text-xl text-[var(--text-300)] leading-relaxed">
-              AI-powered solutions and digital transformation services designed to revolutionize your business — from agentic AI to intelligent automation.
+              Digital transformation services designed to revolutionize your business — from agentic AI to intelligent automation.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Service Details — Alternating layouts */}
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="section-padding">
+        <div className="section-container">
           <div className="space-y-8">
             {services.map((service, i) => {
               const isEven = i % 2 === 0;
@@ -67,7 +66,7 @@ export default function ServicesPage() {
                 <ScrollReveal key={service.id}>
                   <div
                     id={service.id}
-                    className="scroll-mt-28 relative rounded-3xl bg-[var(--surface-1)] border border-[var(--surface-3)]/30 overflow-hidden group"
+                    className="scroll-mt-28 relative rounded-3xl glass-card overflow-hidden group"
                   >
                     {/* Hover glow */}
                     <div
@@ -91,9 +90,12 @@ export default function ServicesPage() {
                             >
                               {serviceIcons[service.icon]}
                             </span>
+                            <span className="font-mono text-xs font-semibold" style={{ color: service.accentColor }}>
+                              {String(i + 1).padStart(2, '0')}
+                            </span>
                           </div>
 
-                          <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
+                          <h2 className="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-5 text-[var(--text-100)]">
                             {service.title}
                           </h2>
                           <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8">
@@ -117,17 +119,10 @@ export default function ServicesPage() {
 
                           <MagneticButton
                             href="/get-a-quote"
-                            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-colors duration-300 hover:opacity-90"
-                            strength={0.1}
+                            className="glow-button inline-flex items-center gap-2 px-6 py-3.5 font-semibold rounded-xl text-white"
                           >
-                            <span
-                              style={{ background: service.accentColor }}
-                              className="absolute inset-0 rounded-xl"
-                            />
-                            <span className="relative flex items-center gap-2">
-                              Get Started
-                              <ArrowRight className="w-4 h-4" />
-                            </span>
+                            Get Started
+                            <ArrowRight className="w-4 h-4" />
                           </MagneticButton>
                         </div>
 
@@ -157,11 +152,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Cross-sell CTA */}
-      <section className="py-20 lg:py-28 bg-[var(--surface-1)]/50">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="section-padding bg-[var(--surface-1)]/50">
+        <div className="section-container">
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-10 rounded-2xl bg-[var(--surface-2)] border border-[var(--surface-3)]/30">
+              <div className="glass-card p-10">
                 <h3 className="font-display font-bold text-2xl mb-3 text-[var(--text-100)]">
                   See our work in action
                 </h3>
@@ -175,7 +170,7 @@ export default function ServicesPage() {
                   View Case Studies <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="p-10 rounded-2xl bg-[var(--surface-2)] border border-[var(--color-brand-500)]/20">
+              <div className="glass-card p-10 border-[var(--color-brand-500)]/20">
                 <h3 className="font-display font-bold text-2xl mb-3 text-[var(--text-100)]">
                   Not sure which service you need?
                 </h3>
@@ -184,7 +179,7 @@ export default function ServicesPage() {
                 </p>
                 <MagneticButton
                   href="/get-a-quote"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-brand-500)] text-white font-semibold text-sm hover:bg-[var(--color-brand-400)] transition-colors"
+                  className="glow-button inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl text-white text-sm"
                 >
                   Book a Free Consultation <ArrowRight className="w-4 h-4" />
                 </MagneticButton>
