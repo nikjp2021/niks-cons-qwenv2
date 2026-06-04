@@ -122,7 +122,7 @@ export default function Home() {
                 { value: 50, suffix: '+', label: 'Projects' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-display font-extrabold text-4xl sm:text-5xl gradient-text">
+                  <div className="font-display font-extrabold text-4xl sm:text-5xl text-[var(--color-brand-500)]">
                     <Counter target={stat.value} suffix={stat.suffix} duration={2.5} />
                   </div>
                   <div className="text-xs text-[var(--text-400)] mt-2 uppercase tracking-[0.1em] font-medium">{stat.label}</div>
@@ -162,34 +162,38 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          STATS — Real outcomes, premium cards
+          STATS — Real outcomes, narrative-driven
           ═══════════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="section-container">
-          <ScrollReveal className="mb-20 text-center">
-            <span className="badge-pill mb-4 inline-flex">Proven Results</span>
-            <h2 className="font-display font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] text-[var(--text-100)]">
-              Real businesses, real outcomes
-            </h2>
-          </ScrollReveal>
-
-          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.1}>
-            {[
-              { value: 300, suffix: '%', label: 'Average ROI', color: 'var(--color-brand-500)' },
-              { value: 50, suffix: '+', label: 'Projects Delivered', color: 'var(--color-cyan)' },
-              { value: 15, suffix: '+', label: 'Countries Served', color: 'var(--color-emerald)' },
-              { value: 10, suffix: '+', label: 'Years Experience', color: 'var(--color-amber)' },
-            ].map((stat) => (
-              <StaggerItem key={stat.label}>
-                <div className="glass-card p-8 text-center">
-                  <div className="font-display font-extrabold text-5xl sm:text-6xl mb-3" style={{ color: stat.color }}>
-                    <Counter target={stat.value} suffix={stat.suffix} duration={2} />
+          <ScrollReveal className="mb-20">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="badge-pill mb-4 inline-flex">Proven Results</span>
+                <h2 className="font-display font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] text-[var(--text-100)]">
+                  Real businesses, real outcomes
+                </h2>
+                <p className="text-xl text-[var(--text-300)] mt-6 leading-relaxed font-light">
+                  We don&apos;t just promise results. We deliver them. Here&apos;s what our clients have achieved with AI-powered solutions.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { value: 300, suffix: '%', label: 'Average ROI', color: 'var(--color-brand-500)' },
+                  { value: 50, suffix: '+', label: 'Projects Delivered', color: 'var(--color-cyan)' },
+                  { value: 15, suffix: '+', label: 'Countries Served', color: 'var(--color-emerald)' },
+                  { value: 10, suffix: '+', label: 'Years Experience', color: 'var(--color-amber)' },
+                ].map((stat) => (
+                  <div key={stat.label} className="glass-card p-6">
+                    <div className="font-display font-extrabold text-4xl mb-2" style={{ color: stat.color }}>
+                      <Counter target={stat.value} suffix={stat.suffix} duration={2} />
+                    </div>
+                    <div className="text-sm text-[var(--text-400)] font-medium">{stat.label}</div>
                   </div>
-                  <div className="text-sm text-[var(--text-400)] font-medium">{stat.label}</div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
