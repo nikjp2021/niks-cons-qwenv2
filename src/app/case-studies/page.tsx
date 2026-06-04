@@ -131,23 +131,37 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Bottom CTA — Asymmetric */}
       <section className="py-20 lg:py-28 bg-[var(--surface-1)]/50">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="text-center">
-            <h2 className="font-display font-black text-4xl sm:text-5xl tracking-tight mb-5 text-[var(--text-100)]">
-              Want to be our next success story?
-            </h2>
-            <p className="text-lg text-[var(--text-300)] max-w-xl mx-auto mb-10">
-              Let&apos;s discuss your project and create a tailored strategy for your business.
-            </p>
-            <MagneticButton
-              href="/get-a-quote"
-              className="group inline-flex items-center gap-2.5 px-10 py-5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-lg hover:bg-[var(--color-brand-400)] transition-colors"
-            >
-              Start Your Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </MagneticButton>
+          <ScrollReveal>
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+              <div>
+                <h2 className="font-display font-black text-4xl sm:text-5xl tracking-tight mb-5 text-[var(--text-100)]">
+                  Want to be our next success story?
+                </h2>
+                <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8 max-w-xl">
+                  Let&apos;s discuss your project and create a tailored strategy for your business.
+                </p>
+                <MagneticButton
+                  href="/get-a-quote"
+                  className="group inline-flex items-center gap-2.5 px-10 py-5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-lg hover:bg-[var(--color-brand-400)] transition-colors"
+                >
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </MagneticButton>
+              </div>
+              <div className="hidden lg:block">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                  <Image
+                    src="/images/workspace.webp"
+                    alt="Modern workspace ready for your next AI project"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>

@@ -7,7 +7,7 @@ import {
   ArrowRight, Brain, Bot, Zap, Globe, Share2, Kanban,
   Search, Target, Hammer, TrendingUp, Star,
   MessageSquare, MessageCircle, Send, Headphones, Workflow,
-  Sparkles, Calendar, BarChart3, ArrowUpRight, Quote,
+  Sparkles, Calendar, BarChart3, ArrowUpRight, Quote, CheckCircle2,
 } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerChildren';
@@ -560,59 +560,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== CTA — No gradient text ===== */}
+      {/* ===== CTA — Asymmetric layout ===== */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--surface-0)] via-[var(--surface-1)] to-[var(--surface-0)]" />
-        <GradientOrb color="rgba(20, 184, 166, 0.1)" size={600} top="50%" left="50%" className="-translate-x-1/2 -translate-y-1/2" />
+        <GradientOrb color="rgba(20, 184, 166, 0.1)" size={600} top="50%" left="-100px" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <ScrollReveal>
             <div className="relative rounded-3xl border border-[var(--surface-3)]/30 overflow-hidden">
-              {/* Background image */}
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/ai-dashboard.webp"
-                  alt=""
-                  fill
-                  className="object-cover opacity-10"
-                  aria-hidden="true"
-                />
-                <div className="absolute inset-0 bg-[var(--surface-1)]/95" />
-              </div>
+              <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
+                {/* Content */}
+                <div className="relative p-10 sm:p-16 lg:p-20">
+                  <h2 className="font-display font-black text-4xl sm:text-5xl tracking-tight mb-5 text-[var(--text-100)]">
+                    Ready to build something extraordinary?
+                  </h2>
+                  <p className="text-lg leading-relaxed text-[var(--text-300)] mb-10 max-w-lg">
+                    Book a free consultation. We&apos;ll show you exactly how AI can transform your operations.
+                  </p>
 
-              <div className="relative p-10 sm:p-16 lg:p-24 text-center">
-                <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-6 text-[var(--text-100)]">
-                  Ready to build something extraordinary?
-                </h2>
-                <p className="text-lg max-w-lg mx-auto mb-12 leading-relaxed text-[var(--text-300)]">
-                  Book a free consultation. We&apos;ll show you exactly how AI can transform your operations.
-                </p>
+                  <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                    <MagneticButton
+                      href="/get-a-quote"
+                      className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-base hover:bg-[var(--color-brand-400)] transition-colors duration-300"
+                    >
+                      Get a Free Quote
+                      <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
+                    </MagneticButton>
+                    <MagneticButton
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--surface-4)] text-[var(--text-200)] font-semibold rounded-xl text-base hover:border-[var(--surface-5)] transition-all duration-300"
+                    >
+                      Get in Touch
+                    </MagneticButton>
+                  </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                  <MagneticButton
-                    href="/get-a-quote"
-                    className="group inline-flex items-center justify-center gap-2.5 px-10 py-5 bg-[var(--color-brand-500)] text-white font-semibold rounded-xl text-lg hover:bg-[var(--color-brand-400)] transition-colors duration-300"
-                  >
-                    Get a Free Quote
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </MagneticButton>
-                  <MagneticButton
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-10 py-5 border border-[var(--surface-4)] text-[var(--text-200)] font-semibold rounded-xl text-lg hover:border-[var(--surface-5)] transition-all duration-300"
-                  >
-                    Get in Touch
-                  </MagneticButton>
+                  <div className="flex flex-wrap gap-6 text-sm text-[var(--text-400)]">
+                    {['Free consultation', 'No commitment', 'Response within 24h'].map((badge) => (
+                      <span key={badge} className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-[var(--color-emerald)]" />
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-[var(--text-400)]">
-                  {['Free consultation', 'No commitment', 'Response within 24h'].map((badge) => (
-                    <span key={badge} className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-[var(--color-emerald)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {badge}
-                    </span>
-                  ))}
+                {/* Image */}
+                <div className="hidden lg:block relative">
+                  <Image
+                    src="/images/data-analytics.webp"
+                    alt="Data analytics dashboard showing AI-powered business insights"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--surface-1)]/60 to-transparent" />
                 </div>
               </div>
             </div>
