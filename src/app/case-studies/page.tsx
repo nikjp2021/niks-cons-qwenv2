@@ -50,7 +50,7 @@ export default function CaseStudiesPage() {
       {/* Case Studies — Alternating layouts */}
       <section className="section-padding">
         <div className="section-container">
-          <StaggerContainer className="space-y-12" staggerDelay={0.08}>
+          <StaggerContainer className="space-y-16" staggerDelay={0.08}>
             {caseStudies.map((cs, i) => {
               const isEven = i % 2 === 0;
               return (
@@ -59,16 +59,18 @@ export default function CaseStudiesPage() {
                     id={cs.id}
                     className="scroll-mt-28 relative rounded-3xl glass-card overflow-hidden group hover:border-[var(--surface-4)] transition-all duration-[var(--duration-normal)]"
                   >
-                    <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px] lg:min-h-[500px]">
                       {/* Image — alternates sides */}
-                      <div className={`relative aspect-[16/9] lg:aspect-auto overflow-hidden ${!isEven ? 'lg:order-2' : ''}`}>
-                        <Image
-                          src={csImages[i % csImages.length]}
-                          alt={csAlts[i % csAlts.length]}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
+                      <div className={`relative overflow-hidden ${!isEven ? 'lg:order-2' : ''}`}>
+                        <div className="absolute inset-0">
+                          <Image
+                            src={csImages[i % csImages.length]}
+                            alt={csAlts[i % csAlts.length]}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                        </div>
                         <div
                           className="absolute inset-0"
                           style={{
@@ -76,7 +78,7 @@ export default function CaseStudiesPage() {
                           }}
                         />
                         <span
-                          className="absolute top-5 left-5 px-4 py-2 rounded-xl text-xs font-semibold backdrop-blur-sm"
+                          className="absolute top-6 left-6 px-4 py-2 rounded-xl text-xs font-semibold backdrop-blur-sm"
                           style={{
                             background: `color-mix(in srgb, ${cs.accentColor} 20%, transparent)`,
                             color: cs.accentColor,
@@ -87,13 +89,13 @@ export default function CaseStudiesPage() {
                       </div>
 
                       {/* Content */}
-                      <div className="p-8 sm:p-10 lg:p-12 xl:p-16 flex flex-col justify-center">
-                        <div className="flex items-center gap-2 mb-4">
+                      <div className="p-10 sm:p-12 lg:p-14 xl:p-16 flex flex-col justify-center">
+                        <div className="flex items-center gap-2 mb-5">
                           <span className="text-xs text-[var(--text-400)] font-medium">{cs.location}</span>
                           <span className="text-lg">{cs.icon}</span>
                         </div>
 
-                        <h2 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-5 text-[var(--text-100)]">
+                        <h2 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-6 text-[var(--text-100)]">
                           {cs.title}
                         </h2>
 

@@ -97,17 +97,17 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={1}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-20">
               <MagneticButton
                 href="/get-a-quote"
-                className="glow-button group inline-flex items-center justify-center gap-3 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                className="glow-button group inline-flex items-center justify-center gap-3 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Get a Free Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </MagneticButton>
               <MagneticButton
                 href="/services"
-                className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                className="ghost-button group inline-flex items-center justify-center gap-2 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Explore Services
               </MagneticButton>
@@ -238,9 +238,9 @@ export default function Home() {
                       background: `radial-gradient(circle at 30% 20%, color-mix(in srgb, ${service.accentColor} 6%, transparent) 0%, transparent 60%)`,
                     }}
                   />
-                  <div className="relative p-8 sm:p-10">
+                  <div className="relative p-10 sm:p-12 lg:p-14">
                     <span
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-[var(--duration-normal)]"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-[var(--duration-normal)]"
                       style={{
                         background: `color-mix(in srgb, ${service.accentColor} 10%, transparent)`,
                         color: service.accentColor,
@@ -248,10 +248,10 @@ export default function Home() {
                     >
                       {serviceIcons[service.icon]}
                     </span>
-                    <h3 className="font-display font-bold text-xl mb-3 text-[var(--text-100)]">
+                    <h3 className="font-display font-bold text-xl mb-4 text-[var(--text-100)]">
                       {service.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-[var(--text-400)] mb-6 line-clamp-3">
+                    <p className="text-sm leading-relaxed text-[var(--text-400)] mb-8 line-clamp-3">
                       {service.shortDesc}
                     </p>
                     <span
@@ -407,12 +407,13 @@ export default function Home() {
                     href={`/case-studies#${cs.id}`}
                     className="group block rounded-3xl overflow-hidden glass-card h-full"
                   >
-                    <div className="relative aspect-[16/10]">
+                    <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src={images[i % images.length]}
                         alt={altTexts[i % altTexts.length]}
                         fill
                         className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-2)] via-transparent to-transparent" />
                       <span
@@ -425,11 +426,11 @@ export default function Home() {
                         {cs.category}
                       </span>
                     </div>
-                    <div className="p-8">
-                      <h3 className="font-display font-bold text-xl mb-3 text-[var(--text-100)] leading-tight">
+                    <div className="p-10 sm:p-12">
+                      <h3 className="font-display font-bold text-xl mb-4 text-[var(--text-100)] leading-tight">
                         {cs.title}
                       </h3>
-                      <p className="text-base text-[var(--text-400)] leading-relaxed mb-6">
+                      <p className="text-base text-[var(--text-400)] leading-relaxed mb-8">
                         {cs.challenge.slice(0, 120)}...
                       </p>
                       <div className="flex items-center gap-6">
@@ -516,17 +517,17 @@ export default function Home() {
                 Book a free consultation. We&apos;ll show you exactly how AI can transform your operations and accelerate growth.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+              <div className="flex flex-col sm:flex-row gap-5 justify-center mb-14">
                 <MagneticButton
                   href="/get-a-quote"
-                  className="glow-button group inline-flex items-center justify-center gap-3 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                  className="glow-button group inline-flex items-center justify-center gap-3 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </MagneticButton>
                 <MagneticButton
                   href="/contact"
-                  className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                  className="ghost-button group inline-flex items-center justify-center gap-2 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get in Touch
                 </MagneticButton>
