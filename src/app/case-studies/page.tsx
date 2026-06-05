@@ -50,7 +50,7 @@ export default function CaseStudiesPage() {
       {/* Case Studies — Alternating layouts */}
       <section className="section-padding">
         <div className="section-container">
-          <StaggerContainer className="space-y-8" staggerDelay={0.08}>
+          <StaggerContainer className="space-y-12" staggerDelay={0.08}>
             {caseStudies.map((cs, i) => {
               const isEven = i % 2 === 0;
               return (
@@ -61,21 +61,22 @@ export default function CaseStudiesPage() {
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                       {/* Image — alternates sides */}
-                      <div className={`relative aspect-[16/9] lg:aspect-auto ${!isEven ? 'lg:order-2' : ''}`}>
+                      <div className={`relative aspect-[16/9] lg:aspect-auto overflow-hidden ${!isEven ? 'lg:order-2' : ''}`}>
                         <Image
                           src={csImages[i % csImages.length]}
                           alt={csAlts[i % csAlts.length]}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                         <div
                           className="absolute inset-0"
                           style={{
-                            background: `linear-gradient(${isEven ? '135deg' : '225deg'}, color-mix(in srgb, ${cs.accentColor} 20%, transparent) 0%, transparent 50%)`,
+                            background: `linear-gradient(${isEven ? '135deg' : '225deg'}, color-mix(in srgb, ${cs.accentColor} 15%, transparent) 0%, transparent 50%)`,
                           }}
                         />
                         <span
-                          className="absolute top-4 left-4 px-3 py-1.5 rounded-lg text-xs font-semibold backdrop-blur-sm"
+                          className="absolute top-5 left-5 px-4 py-2 rounded-xl text-xs font-semibold backdrop-blur-sm"
                           style={{
                             background: `color-mix(in srgb, ${cs.accentColor} 20%, transparent)`,
                             color: cs.accentColor,
@@ -86,28 +87,28 @@ export default function CaseStudiesPage() {
                       </div>
 
                       {/* Content */}
-                      <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+                      <div className="p-8 sm:p-10 lg:p-12 xl:p-16 flex flex-col justify-center">
                         <div className="flex items-center gap-2 mb-4">
-                          <span className="text-xs text-[var(--text-400)]">{cs.location}</span>
+                          <span className="text-xs text-[var(--text-400)] font-medium">{cs.location}</span>
                           <span className="text-lg">{cs.icon}</span>
                         </div>
 
-                        <h2 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-4 text-[var(--text-100)]">
+                        <h2 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-5 text-[var(--text-100)]">
                           {cs.title}
                         </h2>
 
-                        <p className="text-[var(--text-300)] leading-relaxed mb-6">
+                        <p className="text-[var(--text-300)] leading-relaxed mb-8 text-base">
                           {cs.challenge}
                         </p>
 
-                        <div className="space-y-3 mb-6">
+                        <div className="space-y-4 mb-8">
                           {cs.results.map((result, j) => (
                             <div key={j} className="flex items-start gap-3">
                               <TrendingUp
-                                className="w-4 h-4 shrink-0 mt-0.5"
+                                className="w-4 h-4 shrink-0 mt-1"
                                 style={{ color: cs.accentColor }}
                               />
-                              <span className="text-sm text-[var(--text-200)]">{result}</span>
+                              <span className="text-sm text-[var(--text-200)] leading-relaxed">{result}</span>
                             </div>
                           ))}
                         </div>
@@ -116,7 +117,7 @@ export default function CaseStudiesPage() {
                           {cs.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="px-3 py-1 rounded-full text-xs font-medium bg-[var(--surface-2)] text-[var(--text-400)] border border-[var(--surface-3)]/30"
+                              className="px-3 py-1.5 rounded-full text-xs font-medium bg-[var(--surface-2)] text-[var(--text-400)] border border-[var(--surface-3)]/30"
                             >
                               {tag}
                             </span>
@@ -147,10 +148,10 @@ export default function CaseStudiesPage() {
                 </p>
                 <MagneticButton
                   href="/get-a-quote"
-                  className="glow-button group inline-flex items-center gap-2.5 px-10 py-5 font-semibold rounded-xl text-lg text-white"
+                  className="glow-button group inline-flex items-center gap-3 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Start Your Project
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </MagneticButton>
               </div>
               <div className="hidden lg:block">

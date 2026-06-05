@@ -100,14 +100,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
               <MagneticButton
                 href="/get-a-quote"
-                className="glow-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                className="glow-button group inline-flex items-center justify-center gap-3 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Get a Free Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </MagneticButton>
               <MagneticButton
                 href="/services"
-                className="ghost-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Explore Services
               </MagneticButton>
@@ -230,7 +230,7 @@ export default function Home() {
               <StaggerItem key={service.id}>
                 <Link
                   href={`/services#${service.id}`}
-                  className="group relative block p-10 glass-card overflow-hidden h-full"
+                  className="group relative block glass-card overflow-hidden h-full"
                 >
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -238,9 +238,9 @@ export default function Home() {
                       background: `radial-gradient(circle at 30% 20%, color-mix(in srgb, ${service.accentColor} 6%, transparent) 0%, transparent 60%)`,
                     }}
                   />
-                  <div className="relative">
+                  <div className="relative p-8 sm:p-10">
                     <span
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-[var(--duration-normal)]"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-[var(--duration-normal)]"
                       style={{
                         background: `color-mix(in srgb, ${service.accentColor} 10%, transparent)`,
                         color: service.accentColor,
@@ -248,10 +248,10 @@ export default function Home() {
                     >
                       {serviceIcons[service.icon]}
                     </span>
-                    <h3 className="font-display font-bold text-2xl mb-4 text-[var(--text-100)]">
+                    <h3 className="font-display font-bold text-xl mb-3 text-[var(--text-100)]">
                       {service.title}
                     </h3>
-                    <p className="text-base leading-relaxed text-[var(--text-400)] mb-8">
+                    <p className="text-sm leading-relaxed text-[var(--text-400)] mb-6">
                       {service.shortDesc}
                     </p>
                     <span
@@ -519,14 +519,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
                 <MagneticButton
                   href="/get-a-quote"
-                  className="glow-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                  className="glow-button group inline-flex items-center justify-center gap-3 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </MagneticButton>
                 <MagneticButton
                   href="/contact"
-                  className="ghost-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                  className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-5 sm:px-12 sm:py-6 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get in Touch
                 </MagneticButton>
