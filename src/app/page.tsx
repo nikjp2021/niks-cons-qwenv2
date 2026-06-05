@@ -90,24 +90,24 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.8}>
-            <p className="text-xl sm:text-2xl leading-relaxed max-w-2xl mx-auto mb-16 text-[var(--text-300)] font-light">
+            <p className="text-xl sm:text-2xl leading-[1.8] max-w-2xl mx-auto mb-20 text-[var(--text-300)] font-light">
               Digital transformation partner for startups and SMEs. Agentic AI, automation,
               and lean strategies that turn complexity into growth.
             </p>
           </FadeIn>
 
           <FadeIn delay={1}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-20">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
               <MagneticButton
                 href="/get-a-quote"
-                className="glow-button group inline-flex items-center justify-center gap-3 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                className="glow-button group inline-flex items-center justify-center gap-3 px-14 py-7 sm:px-18 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Get a Free Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </MagneticButton>
               <MagneticButton
                 href="/services"
-                className="ghost-button group inline-flex items-center justify-center gap-2 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                className="ghost-button group inline-flex items-center justify-center gap-2 px-14 py-7 sm:px-18 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Explore Services
               </MagneticButton>
@@ -115,7 +115,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={1.2}>
-            <div className="flex items-center justify-center gap-8 sm:gap-12 lg:gap-20 flex-wrap">
+            <div className="flex items-center justify-center gap-10 sm:gap-16 lg:gap-24 flex-wrap mt-8">
               {[
                 { value: 300, suffix: '%', label: 'Average ROI' },
                 { value: 15, suffix: '+', label: 'Countries' },
@@ -125,7 +125,7 @@ export default function Home() {
                   <div className="font-display font-extrabold text-4xl sm:text-5xl text-[var(--color-brand-500)]">
                     <Counter target={stat.value} suffix={stat.suffix} duration={2.5} />
                   </div>
-                  <div className="text-xs text-[var(--text-400)] mt-2 uppercase tracking-[0.1em] font-medium">{stat.label}</div>
+                  <div className="text-xs text-[var(--text-400)] mt-3 uppercase tracking-[0.1em] font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -238,7 +238,7 @@ export default function Home() {
                       background: `radial-gradient(circle at 30% 20%, color-mix(in srgb, ${service.accentColor} 6%, transparent) 0%, transparent 60%)`,
                     }}
                   />
-                  <div className="relative p-10 sm:p-12 lg:p-14">
+                  <div className="relative p-10 sm:p-12 lg:p-14 flex flex-col h-full">
                     <span
                       className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-[var(--duration-normal)]"
                       style={{
@@ -251,12 +251,11 @@ export default function Home() {
                     <h3 className="font-display font-bold text-xl mb-4 text-[var(--text-100)]">
                       {service.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-[var(--text-400)] mb-8 line-clamp-3">
+                    <p className="text-sm leading-relaxed text-[var(--text-300)] mb-8 flex-1">
                       {service.shortDesc}
                     </p>
                     <span
-                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-[var(--duration-normal)] group-hover:gap-3"
-                      style={{ color: service.accentColor }}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-400)] transition-all duration-[var(--duration-normal)] group-hover:gap-3 group-hover:text-[var(--color-brand-300)]"
                     >
                       Learn more
                       <ArrowRight className="w-4 h-4" />
@@ -513,21 +512,21 @@ export default function Home() {
               <h2 className="font-display font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] mb-8 text-[var(--text-100)]">
                 Ready to build something extraordinary?
               </h2>
-              <p className="text-xl leading-relaxed text-[var(--text-300)] mb-14 max-w-lg mx-auto font-light">
+              <p className="text-xl leading-[1.8] text-[var(--text-300)] mb-16 max-w-lg mx-auto font-light">
                 Book a free consultation. We&apos;ll show you exactly how AI can transform your operations and accelerate growth.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-5 justify-center mb-14">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                 <MagneticButton
                   href="/get-a-quote"
-                  className="glow-button group inline-flex items-center justify-center gap-3 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                  className="glow-button group inline-flex items-center justify-center gap-3 px-14 py-7 sm:px-18 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get a Free Quote
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </MagneticButton>
                 <MagneticButton
                   href="/contact"
-                  className="ghost-button group inline-flex items-center justify-center gap-2 px-12 py-6 sm:px-16 sm:py-7 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
+                  className="ghost-button group inline-flex items-center justify-center gap-2 px-14 py-7 sm:px-18 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get in Touch
                 </MagneticButton>
