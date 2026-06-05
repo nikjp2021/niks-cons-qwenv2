@@ -231,15 +231,19 @@ input, textarea, select {
 
 /* ── Glow Button ───────────────────────────────
    Premium CTA button with subtle glow (Apple-style)
-   Clean, minimal, refined */
+   Clean, minimal, refined
+   Follows UI/UX Pro Max: min 44px touch target, clear states */
 .glow-button {
   position: relative;
   background: var(--color-brand-500);
   color: #ffffff;
   border-radius: var(--radius-full);
-  transition: all var(--duration-normal) var(--ease-apple);
+  transition: all 200ms var(--ease-apple);
   font-weight: 600;
   letter-spacing: -0.01em;
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .glow-button::after {
@@ -250,13 +254,12 @@ input, textarea, select {
   background: var(--color-brand-500);
   opacity: 0;
   filter: blur(16px);
-  transition: opacity var(--duration-normal) var(--ease-apple);
+  transition: opacity 200ms var(--ease-apple);
   z-index: -1;
 }
 
 .glow-button:hover {
   background: var(--color-brand-400);
-  transform: translateY(-1px);
   box-shadow: 0 4px 20px rgba(20, 184, 166, 0.3);
 }
 
@@ -265,7 +268,62 @@ input, textarea, select {
 }
 
 .glow-button:active {
-  transform: translateY(0) scale(0.98);
+  transform: scale(0.98);
+}
+
+.glow-button:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+.glow-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.glow-button:disabled::after {
+  display: none;
+}
+
+/* ── Ghost Button ───────────────────────────────
+   Secondary button style with clear hierarchy
+   Follows UI/UX Pro Max: clear visual subordination */
+.ghost-button {
+  position: relative;
+  background: transparent;
+  color: var(--text-200);
+  border: 1px solid var(--surface-4);
+  border-radius: var(--radius-full);
+  transition: all 200ms var(--ease-apple);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.ghost-button:hover {
+  border-color: var(--surface-5);
+  background: var(--surface-1);
+  color: var(--text-100);
+}
+
+.ghost-button:active {
+  transform: scale(0.98);
+  background: var(--surface-2);
+}
+
+.ghost-button:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+.ghost-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* ── Hero Gradient ─────────────────────────────
