@@ -58,18 +58,13 @@ export default function Navbar() {
             : 'py-5 bg-transparent'
         }`}
       >
-        <div className="max-w-[var(--container-max)] mx-auto px-[var(--space-5)] sm:px-[var(--space-8)] lg:px-[var(--space-12)] flex items-center justify-between">
+        <div className="section-container flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div
-              className="w-9 h-9 rounded-[var(--radius-lg)] flex items-center justify-center font-[var(--font-display)] font-black text-white text-sm tracking-tight"
-              style={{ background: 'var(--color-brand-500)' }}
-            >
+          <Link href="/" className="navbar-logo group">
+            <div className="navbar-logo-icon">
               N
             </div>
-            <span
-              className="font-[var(--font-display)] font-bold text-[var(--text-100)] text-lg tracking-tight"
-            >
+            <span className="navbar-logo-text">
               Nik&apos;s
             </span>
           </Link>
@@ -85,7 +80,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-[var(--text-300)] hover:text-[var(--text-100)] transition-colors duration-[var(--duration-fast)]"
+                  className="navbar-link"
                 >
                   {link.label}
                   {link.children && (
@@ -101,21 +96,12 @@ export default function Navbar() {
                       transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                       className="absolute top-full left-0 pt-2"
                     >
-                      <div
-                        className="p-2 min-w-[180px]"
-                        style={{
-                          background: 'var(--surface-2)',
-                          border: '1px solid var(--surface-3)',
-                          borderRadius: 'var(--radius-xl)',
-                          boxShadow: 'var(--shadow-lg)',
-                        }}
-                      >
+                      <div className="navbar-dropdown">
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="block px-4 py-2.5 text-sm text-[var(--text-300)] hover:text-[var(--text-100)] hover:bg-[var(--surface-3)]/50 transition-all duration-[var(--duration-fast)]"
-                            style={{ borderRadius: 'var(--radius-lg)' }}
+                            className="navbar-dropdown-item"
                           >
                             {child.label}
                           </Link>
@@ -132,8 +118,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 flex items-center justify-center text-[var(--text-400)] hover:text-[var(--text-100)] hover:bg-[var(--surface-2)] transition-all duration-[var(--duration-fast)]"
-              style={{ borderRadius: 'var(--radius-lg)' }}
+              className="navbar-icon-button"
               aria-label="Toggle theme"
             >
               <AnimatePresence mode="wait">
@@ -163,17 +148,7 @@ export default function Navbar() {
 
             <Link
               href="/get-a-quote"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-white text-sm font-semibold transition-colors duration-[var(--duration-normal)]"
-              style={{
-                background: 'var(--color-brand-500)',
-                borderRadius: 'var(--radius-xl)',
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = 'var(--color-brand-400)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = 'var(--color-brand-500)')
-              }
+              className="navbar-cta"
             >
               Get a Quote
               <ArrowRight className="w-3.5 h-3.5" />
@@ -181,8 +156,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden w-9 h-9 flex items-center justify-center text-[var(--text-300)] hover:text-[var(--text-100)] hover:bg-[var(--surface-2)] transition-all"
-              style={{ borderRadius: 'var(--radius-lg)' }}
+              className="navbar-icon-button lg:hidden"
               aria-label="Toggle menu"
             >
               {mobileOpen ? (
@@ -216,8 +190,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-4 text-2xl font-bold text-[var(--text-100)] border-b border-[var(--surface-3)]/30"
-                    style={{ fontFamily: 'var(--font-display)' }}
+                    className="mobile-nav-link"
                   >
                     {link.label}
                   </Link>
@@ -226,7 +199,7 @@ export default function Navbar() {
                       key={child.href}
                       href={child.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-3 pl-4 text-base text-[var(--text-300)] hover:text-[var(--text-100)]"
+                      className="mobile-nav-child-link"
                     >
                       {child.label}
                     </Link>
@@ -242,11 +215,7 @@ export default function Navbar() {
                 <Link
                   href="/get-a-quote"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center gap-2 px-8 py-4 text-white font-semibold text-lg transition-colors"
-                  style={{
-                    background: 'var(--color-brand-500)',
-                    borderRadius: 'var(--radius-xl)',
-                  }}
+                  className="mobile-cta-button"
                 >
                   Get a Quote
                   <ArrowRight className="w-5 h-5" />

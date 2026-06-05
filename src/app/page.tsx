@@ -97,17 +97,17 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={1}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
               <MagneticButton
                 href="/get-a-quote"
-                className="glow-button group inline-flex items-center justify-center gap-3 px-10 py-5 font-semibold rounded-full text-lg"
+                className="glow-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Get a Free Quote
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </MagneticButton>
               <MagneticButton
                 href="/services"
-                className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-5 font-semibold rounded-full text-lg"
+                className="ghost-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
               >
                 Explore Services
               </MagneticButton>
@@ -519,14 +519,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
                 <MagneticButton
                   href="/get-a-quote"
-                  className="glow-button group inline-flex items-center justify-center gap-3 px-10 py-5 font-semibold rounded-full text-lg"
+                  className="glow-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get a Free Quote
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </MagneticButton>
                 <MagneticButton
                   href="/contact"
-                  className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-5 font-semibold rounded-full text-lg"
+                  className="ghost-button group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap"
                 >
                   Get in Touch
                 </MagneticButton>
