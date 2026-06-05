@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { ReactNode } from 'react';
 
 interface ScrollRevealProps {
@@ -19,16 +19,17 @@ const directionMap = {
 };
 
 export function ScrollReveal({ children, delay = 0, direction = 'up', className, distance = 40 }: ScrollRevealProps) {
+  const shouldReduceMotion = useReducedMotion();
   const offset = { ...directionMap[direction] };
   if ('x' in offset) offset.x = distance * Math.sign(offset.x!);
   if ('y' in offset) offset.y = distance * Math.sign(offset.y!);
 
   return (
     <motion.div
-      initial={{ opacity: 0, ...offset }}
+      initial={shouldReduceMotion ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...offset }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{
+      transition={shouldReduceMotion ? { duration: 0 } : {
         duration: 0.8,
         delay,
         ease: [0.16, 1, 0.3, 1],

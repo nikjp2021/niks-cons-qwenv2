@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 interface GradientOrbProps {
   color?: string;
@@ -23,11 +23,13 @@ export function GradientOrb({
   className,
   delay = 0,
 }: GradientOrbProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.5, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={shouldReduceMotion ? { duration: 0 } : { duration: 1.5, delay, ease: [0.16, 1, 0.3, 1] }}
       className={`absolute pointer-events-none ${className || ''}`}
       style={{
         top,

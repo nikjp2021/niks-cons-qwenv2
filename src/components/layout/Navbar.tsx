@@ -44,10 +44,28 @@ export default function Navbar() {
     document.documentElement.classList.toggle('light', theme === 'light');
   }, [theme]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
 
   return (
     <>
+      {/* Skip to content link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[var(--color-brand-500)] focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold"
+      >
+        Skip to main content
+      </a>
+
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -60,7 +78,7 @@ export default function Navbar() {
       >
         <div className="section-container flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="navbar-logo group">
+          <Link href="/" className="navbar-logo group" aria-label="Nik&apos;s Consulting — Home">
             <div className="navbar-logo-icon">
               N
             </div>
@@ -77,10 +95,14 @@ export default function Navbar() {
                 className="relative"
                 onMouseEnter={() => link.children && setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
+                onFocus={() => link.children && setActiveDropdown(link.label)}
+                onBlur={() => setActiveDropdown(null)}
               >
                 <Link
                   href={link.href}
                   className="navbar-link"
+                  aria-haspopup={link.children ? 'true' : undefined}
+                  aria-expanded={link.children && activeDropdown === link.label ? 'true' : 'false'}
                 >
                   {link.label}
                   {link.children && (
@@ -158,6 +180,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="navbar-icon-button lg:hidden"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? (
                 <X className="w-5 h-5" />
@@ -178,6 +201,9 @@ export default function Navbar() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[var(--z-overlay)] bg-[var(--surface-0)]/95 backdrop-blur-2xl pt-24 px-8 lg:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
           >
             <nav className="flex flex-col gap-2">
               {navLinks.map((link, i) => (

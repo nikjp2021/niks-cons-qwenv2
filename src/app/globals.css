@@ -190,7 +190,8 @@ input, textarea, select {
 
 /* ── Glass Card ────────────────────────────────
    Premium frosted glass effect (Apple-style)
-   Very subtle, refined */
+   Very subtle, refined
+   Follows UI/UX Pro Max: consistent elevation */
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -198,6 +199,27 @@ input, textarea, select {
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-2xl);
   transition: all var(--duration-normal) var(--ease-apple);
+}
+
+/* Opt-in hover lift for interactive cards only */
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.light .glass-card,
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.light .glass-card-hover:hover,
+[data-theme="light"] .glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .glass-card:hover {
@@ -632,7 +654,7 @@ input, textarea, select {
   background: var(--color-brand-400);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .navbar-cta {
     display: inline-flex;
   }

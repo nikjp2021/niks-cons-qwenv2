@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden hero-gradient">
+      <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden hero-gradient">
         <GradientOrb color="rgba(20, 184, 166, 0.08)" size={800} top="-300px" left="-300px" />
 
         <div className="relative section-container">
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 <p className="text-base text-[var(--text-400)] mb-8">
                   Agentic AI Builder | Xiaomi MiMo Grant Winner | PhD Candidate
                 </p>
-                <p className="text-[var(--text-300)] leading-relaxed mb-8 text-lg font-light">
+                <p className="text-[var(--text-300)] leading-relaxed mb-8 text-lg font-light line-clamp-6">
                   {team[0].bio}
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -203,7 +203,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="font-display font-bold text-xl mb-2 text-[var(--text-100)]">{member.name}</h3>
                   <p className="text-base text-[var(--text-400)] mb-6">{member.role}</p>
-                  <p className="text-base text-[var(--text-300)] leading-relaxed font-light">{member.bio}</p>
+                  <p className="text-base text-[var(--text-300)] leading-relaxed font-light line-clamp-4">{member.bio}</p>
                 </div>
               </StaggerItem>
             ))}

@@ -115,7 +115,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={1.2}>
-            <div className="flex items-center justify-center gap-20">
+            <div className="flex items-center justify-center gap-8 sm:gap-12 lg:gap-20 flex-wrap">
               {[
                 { value: 300, suffix: '%', label: 'Average ROI' },
                 { value: 15, suffix: '+', label: 'Countries' },
@@ -251,7 +251,7 @@ export default function Home() {
                     <h3 className="font-display font-bold text-xl mb-3 text-[var(--text-100)]">
                       {service.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-[var(--text-400)] mb-6">
+                    <p className="text-sm leading-relaxed text-[var(--text-400)] mb-6 line-clamp-3">
                       {service.shortDesc}
                     </p>
                     <span
@@ -350,7 +350,7 @@ export default function Home() {
                     <h3 className="font-display font-bold text-2xl mb-4 text-[var(--text-100)]">
                       {step.title}
                     </h3>
-                    <p className="text-base leading-relaxed text-[var(--text-400)]">
+                    <p className="text-base leading-relaxed text-[var(--text-400)] line-clamp-4">
                       {step.desc}
                     </p>
                   </div>
@@ -434,7 +434,7 @@ export default function Home() {
                       </p>
                       <div className="flex items-center gap-6">
                         {cs.results.slice(0, 2).map((result, j) => (
-                          <span key={j} className="flex items-center gap-2 text-sm font-medium" style={{ color: cs.accentColor }}>
+                          <span key={j} className="flex items-center gap-2 text-sm font-medium" style={{ color: cs.accentColor }} title={result}>
                             <TrendingUp className="w-4 h-4" />
                             {result.length > 35 ? result.slice(0, 35) + '...' : result}
                           </span>

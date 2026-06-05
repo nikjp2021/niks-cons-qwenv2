@@ -40,7 +40,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden hero-gradient">
+      <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden hero-gradient">
         <GradientOrb color="rgba(20, 184, 166, 0.1)" size={800} top="-300px" left="-300px" />
 
         <div className="relative section-container">
