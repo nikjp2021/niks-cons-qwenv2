@@ -67,7 +67,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           HERO — Cinematic, full viewport, Apple-style
           ═══════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-20 sm:pt-24">
         <GradientOrb color="rgba(20, 184, 166, 0.12)" size={800} top="-300px" right="-300px" />
         <GradientOrb color="rgba(6, 182, 212, 0.08)" size={600} bottom="-200px" left="-200px" />
 
