@@ -22,12 +22,14 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden hero-gradient">
-        <GradientOrb color="rgba(20, 184, 166, 0.08)" size={800} top="-300px" left="-300px" />
+        <GradientOrb color="rgba(20, 184, 166, 0.1)" size={900} top="-400px" left="-400px" />
 
         <div className="relative section-container">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-24 items-center">
             <ScrollReveal>
-              <span className="badge-pill mb-6 inline-flex">About Us</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-brand-500)]/20 bg-[var(--color-brand-500)]/5 mb-8">
+                <span className="text-sm font-medium text-[var(--color-brand-400)]">About Us</span>
+              </div>
               <h1 className="font-display font-extrabold text-6xl sm:text-7xl lg:text-8xl tracking-[-0.04em] mb-8 text-[var(--text-100)]">
                 Pioneers in AI solutions & innovation
               </h1>

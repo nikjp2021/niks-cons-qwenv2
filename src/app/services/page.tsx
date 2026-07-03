@@ -41,11 +41,13 @@ export default function ServicesPage() {
     <>
       {/* Hero */}
       <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 lg:pb-24 overflow-hidden hero-gradient">
-        <GradientOrb color="rgba(20, 184, 166, 0.1)" size={800} top="-300px" left="-300px" />
+        <GradientOrb color="rgba(20, 184, 166, 0.12)" size={900} top="-400px" left="-400px" />
 
         <div className="relative section-container">
           <ScrollReveal className="max-w-3xl">
-            <span className="badge-pill mb-6 inline-flex">Our Services</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-brand-500)]/20 bg-[var(--color-brand-500)]/5 mb-8">
+              <span className="text-sm font-medium text-[var(--color-brand-400)]">Our Services</span>
+            </div>
             <h1 className="font-display font-extrabold text-6xl sm:text-7xl lg:text-8xl tracking-[-0.04em] mb-8 text-[var(--text-100)]">
               AI-powered solutions for modern businesses
             </h1>
@@ -155,34 +157,29 @@ export default function ServicesPage() {
       <section className="section-padding bg-[var(--surface-1)]/30">
         <div className="section-container">
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass-card p-12">
-                <h3 className="font-display font-bold text-3xl mb-4 text-[var(--text-100)]">
-                  See our work in action
-                </h3>
-                <p className="text-[var(--text-300)] mb-8 text-lg font-light">
-                  Explore 6 real case studies — from AI-powered triage in Japan to e-commerce automation in Brazil.
-                </p>
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-500)] hover:gap-3 transition-all"
-                >
-                  View Case Studies <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="glass-card p-12 border-[var(--color-brand-500)]/15">
-                <h3 className="font-display font-bold text-3xl mb-4 text-[var(--text-100)]">
+            <div className="glass-card p-12 sm:p-16 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-500)]/5 via-transparent to-[var(--color-cyan)]/5" />
+              <div className="relative">
+                <h3 className="font-display font-extrabold text-3xl sm:text-4xl mb-4 text-[var(--text-100)]">
                   Not sure which service you need?
                 </h3>
-                <p className="text-[var(--text-300)] mb-8 text-lg font-light">
+                <p className="text-[var(--text-300)] mb-8 text-lg font-light max-w-lg mx-auto">
                   Book a free consultation and we&apos;ll help you identify the best solutions for your business.
                 </p>
-                <MagneticButton
-                  href="/get-a-quote"
-                  className="glow-button inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-full text-white"
-                >
-                  Book a Free Consultation <ArrowRight className="w-5 h-5" />
-                </MagneticButton>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <MagneticButton
+                    href="/get-a-quote"
+                    className="glow-button group inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-full text-white"
+                  >
+                    Book a Free Consultation <ArrowRight className="w-5 h-5" />
+                  </MagneticButton>
+                  <MagneticButton
+                    href="/case-studies"
+                    className="ghost-button group inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-full"
+                  >
+                    View Case Studies
+                  </MagneticButton>
+                </div>
               </div>
             </div>
           </ScrollReveal>

@@ -68,20 +68,21 @@ export default function Home() {
           HERO — Cinematic, full viewport, Apple-style
           ═══════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-20 sm:pt-24">
-        <GradientOrb color="rgba(20, 184, 166, 0.12)" size={800} top="-300px" right="-300px" />
+        <GradientOrb color="rgba(20, 184, 166, 0.15)" size={900} top="-400px" right="-400px" />
         <GradientOrb color="rgba(6, 182, 212, 0.08)" size={600} bottom="-200px" left="-200px" />
 
-        <div className="relative z-10 text-center section-container" style={{ maxWidth: '900px' }}>
+        <div className="relative z-10 text-center section-container" style={{ maxWidth: '960px' }}>
           <FadeIn delay={0}>
-            <span className="badge-pill mb-8 inline-flex">
-              AI-First Consulting
-            </span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-brand-500)]/20 bg-[var(--color-brand-500)]/5 mb-10">
+              <Sparkles className="w-4 h-4 text-[var(--color-brand-400)]" />
+              <span className="text-sm font-medium text-[var(--color-brand-400)]">AI-First Consulting</span>
+            </div>
           </FadeIn>
 
-          <div className="mb-12">
+          <div className="mb-10">
             <TextReveal
               as="h1"
-              className="font-display font-extrabold text-[clamp(3.5rem,9vw,7rem)] leading-[0.95] tracking-[-0.04em] text-[var(--text-100)]"
+              className="font-display font-extrabold text-[clamp(3rem,9vw,7rem)] leading-[0.92] tracking-[-0.04em] text-[var(--text-100)]"
               delay={0.2}
               staggerDelay={0.06}
             >
@@ -90,34 +91,38 @@ export default function Home() {
           </div>
 
           <FadeIn delay={0.8}>
-            <p className="text-xl sm:text-2xl leading-[1.8] max-w-2xl mx-auto mb-20 text-[var(--text-300)] font-light">
+            <p className="text-xl sm:text-2xl leading-[1.8] max-w-2xl mx-auto mb-14 text-[var(--text-300)] font-light">
               Digital transformation partner for startups and SMEs. Agentic AI, automation,
               and lean strategies that turn complexity into growth.
             </p>
           </FadeIn>
 
           <FadeIn delay={1}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-10">
               <MagneticButton
                 href="/get-a-quote"
-                className="glow-button group inline-flex items-center justify-center gap-3 px-16 py-7 sm:px-20 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap min-w-[200px]"
+                className="glow-button group inline-flex items-center justify-center gap-3 px-14 py-7 sm:px-18 sm:py-8 font-semibold rounded-full text-lg whitespace-nowrap"
               >
                 Get a Free Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </MagneticButton>
               <MagneticButton
                 href="/services"
-                className="ghost-button group inline-flex items-center justify-center gap-2 px-16 py-7 sm:px-20 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap min-w-[200px]"
+                className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-7 font-semibold rounded-full text-lg whitespace-nowrap"
               >
                 Explore Services
               </MagneticButton>
             </div>
+            <p className="text-sm text-[var(--text-400)] flex items-center justify-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-[var(--color-emerald)]" />
+              Free consultation &middot; No commitment &middot; Response within 24h
+            </p>
           </FadeIn>
 
           <FadeIn delay={1.2}>
             <div className="flex items-center justify-center gap-10 sm:gap-16 lg:gap-24 flex-wrap mt-8">
               {[
-                { value: 300, suffix: '%', label: 'Average ROI' },
+                { value: 300, suffix: '%', label: 'Avg. ROI' },
                 { value: 15, suffix: '+', label: 'Countries' },
                 { value: 50, suffix: '+', label: 'Projects' },
               ].map((stat) => (
@@ -125,7 +130,7 @@ export default function Home() {
                   <div className="font-display font-extrabold text-4xl sm:text-5xl text-[var(--color-brand-500)]">
                     <Counter target={stat.value} suffix={stat.suffix} duration={2.5} />
                   </div>
-                  <div className="text-xs text-[var(--text-400)] mt-3 uppercase tracking-[0.1em] font-medium">{stat.label}</div>
+                  <div className="text-xs text-[var(--text-400)] mt-2 uppercase tracking-[0.1em] font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -145,17 +150,17 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          MARQUEE STRIP — Subtle brand reinforcement
+          MARQUEE STRIP — Brand reinforcement
           ═══════════════════════════════════════════════════ */}
-      <section className="py-6 border-y border-[var(--surface-3)]/20 bg-[var(--surface-1)]/20">
-        <Marquee speed={40}>
+      <section className="py-6 border-y border-[var(--surface-3)]/20 bg-[var(--surface-1)]/20 overflow-hidden">
+        <Marquee speed={35}>
           {[
             'AI-First Consulting', 'Digital Transformation', 'Agentic AI', 'Automation',
             'Web Development', 'Social Media Strategy', 'Agile Management', 'Growth Engineering',
           ].map((item) => (
             <span key={item} className="inline-flex items-center gap-6 mx-8 text-sm text-[var(--text-400)] font-medium tracking-wide">
               {item}
-              <span className="w-1 h-1 rounded-full bg-[var(--surface-4)]" />
+              <span className="w-1 h-1 rounded-full bg-[var(--color-brand-500)]" />
             </span>
           ))}
         </Marquee>
@@ -204,33 +209,22 @@ export default function Home() {
         <GradientOrb color="rgba(20, 184, 166, 0.06)" size={800} top="0" right="-300px" />
 
         <div className="relative section-container">
-          <ScrollReveal className="mb-20">
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
-              <div className="max-w-2xl">
-                <span className="badge-pill mb-4 inline-flex">What We Do</span>
-                <h2 className="font-display font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] text-[var(--text-100)]">
-                  AI-powered solutions for modern businesses
-                </h2>
-                <p className="text-xl text-[var(--text-300)] mt-6 leading-relaxed font-light">
-                  From intelligent automation to full digital transformation — we deliver measurable results, not slide decks.
-                </p>
-              </div>
-              <Link
-                href="/services"
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-500)] hover:gap-3 transition-all shrink-0"
-              >
-                All services
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+          <ScrollReveal className="mb-20 text-center max-w-2xl mx-auto">
+            <span className="badge-pill mb-4 inline-flex">What We Do</span>
+            <h2 className="font-display font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] text-[var(--text-100)]">
+              AI-powered solutions for modern businesses
+            </h2>
+            <p className="text-xl text-[var(--text-300)] mt-6 leading-relaxed font-light">
+              From intelligent automation to full digital transformation — we deliver measurable results, not slide decks.
+            </p>
           </ScrollReveal>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.08}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.06}>
             {services.map((service) => (
               <StaggerItem key={service.id}>
                 <Link
                   href={`/services#${service.id}`}
-                  className="group relative block glass-card overflow-hidden h-full"
+                  className="group relative block glass-card overflow-hidden h-full hover:border-[var(--surface-4)] transition-all duration-300"
                 >
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -238,9 +232,9 @@ export default function Home() {
                       background: `radial-gradient(circle at 30% 20%, color-mix(in srgb, ${service.accentColor} 6%, transparent) 0%, transparent 60%)`,
                     }}
                   />
-                  <div className="relative p-10 sm:p-12 lg:p-14 flex flex-col h-full">
+                  <div className="relative p-8 sm:p-10 flex flex-col h-full">
                     <span
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-[var(--duration-normal)]"
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300"
                       style={{
                         background: `color-mix(in srgb, ${service.accentColor} 10%, transparent)`,
                         color: service.accentColor,
@@ -248,14 +242,15 @@ export default function Home() {
                     >
                       {serviceIcons[service.icon]}
                     </span>
-                    <h3 className="font-display font-bold text-xl mb-4 text-[var(--text-100)]">
+                    <h3 className="font-display font-bold text-lg mb-3 text-[var(--text-100)]">
                       {service.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-[var(--text-300)] mb-8 flex-1">
+                    <p className="text-sm leading-relaxed text-[var(--text-300)] mb-6 flex-1 font-light">
                       {service.shortDesc}
                     </p>
                     <span
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-400)] transition-all duration-[var(--duration-normal)] group-hover:gap-3 group-hover:text-[var(--color-brand-300)]"
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 group-hover:gap-3"
+                      style={{ color: service.accentColor }}
                     >
                       Learn more
                       <ArrowRight className="w-4 h-4" />
@@ -265,6 +260,16 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <ScrollReveal className="mt-12 text-center">
+            <Link
+              href="/services"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-500)] hover:gap-3 transition-all"
+            >
+              View all services
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -503,42 +508,46 @@ export default function Home() {
           ═══════════════════════════════════════════════════ */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--surface-0)] via-[var(--surface-1)]/50 to-[var(--surface-0)]" />
-        <GradientOrb color="rgba(20, 184, 166, 0.06)" size={800} top="50%" left="-200px" />
+        <GradientOrb color="rgba(20, 184, 166, 0.08)" size={800} top="50%" left="-200px" />
+        <GradientOrb color="rgba(245, 158, 11, 0.04)" size={600} top="50%" right="-200px" />
 
         <div className="relative section-container">
           <ScrollReveal>
-            <div className="glass-card p-12 sm:p-16 lg:p-24 text-center">
-              <span className="badge-pill mb-8 inline-flex">Ready to Start?</span>
-              <h2 className="font-display font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] mb-8 text-[var(--text-100)]">
-                Ready to build something extraordinary?
-              </h2>
-              <p className="text-xl leading-[1.8] text-[var(--text-300)] mb-16 max-w-lg mx-auto font-light">
-                Book a free consultation. We&apos;ll show you exactly how AI can transform your operations and accelerate growth.
-              </p>
+            <div className="glass-card p-12 sm:p-16 lg:p-24 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-500)]/5 via-transparent to-[var(--color-cyan)]/5" />
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <MagneticButton
-                  href="/get-a-quote"
-                  className="glow-button group inline-flex items-center justify-center gap-3 px-16 py-7 sm:px-20 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap min-w-[200px]"
-                >
-                  Get a Free Quote
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                </MagneticButton>
-                <MagneticButton
-                  href="/contact"
-                  className="ghost-button group inline-flex items-center justify-center gap-2 px-16 py-7 sm:px-20 sm:py-8 font-semibold rounded-full text-base sm:text-lg whitespace-nowrap min-w-[200px]"
-                >
-                  Get in Touch
-                </MagneticButton>
-              </div>
+              <div className="relative">
+                <h2 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-[-0.04em] mb-6 text-[var(--text-100)]">
+                  Ready to build something extraordinary?
+                </h2>
+                <p className="text-xl leading-[1.8] text-[var(--text-300)] mb-12 max-w-xl mx-auto font-light">
+                  Book a free consultation. We&apos;ll show you exactly how AI can transform your operations and accelerate growth.
+                </p>
 
-              <div className="flex flex-wrap gap-8 justify-center text-sm text-[var(--text-400)]">
-                {['Free consultation', 'No commitment', 'Response within 24h'].map((badge) => (
-                  <span key={badge} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[var(--color-emerald)]" />
-                    {badge}
-                  </span>
-                ))}
+                <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
+                  <MagneticButton
+                    href="/get-a-quote"
+                    className="glow-button group inline-flex items-center justify-center gap-3 px-14 py-7 sm:px-18 sm:py-8 font-semibold rounded-full text-lg whitespace-nowrap"
+                  >
+                    Get a Free Quote
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                  </MagneticButton>
+                  <MagneticButton
+                    href="/contact"
+                    className="ghost-button group inline-flex items-center justify-center gap-2 px-10 py-7 font-semibold rounded-full text-lg whitespace-nowrap"
+                  >
+                    Get in Touch
+                  </MagneticButton>
+                </div>
+
+                <div className="flex flex-wrap gap-8 justify-center text-sm text-[var(--text-400)]">
+                  {['Free consultation', 'No commitment', 'Response within 24h'].map((badge) => (
+                    <span key={badge} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[var(--color-emerald)]" />
+                      {badge}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </ScrollReveal>

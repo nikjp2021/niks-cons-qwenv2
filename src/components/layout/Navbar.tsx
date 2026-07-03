@@ -7,6 +7,7 @@ import { Menu, X, Sun, Moon, ChevronDown, ArrowRight } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Bootstrap Maverick', href: '/bootstrap-maverick' },
   {
     label: 'Services',
     href: '/services',

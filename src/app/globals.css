@@ -8,12 +8,12 @@
 
 /* ──────────────────────────────────────────────
    FONT IMPORTS — Google Fonts
-   Plus Jakarta Sans: 500–800 (display headings)
-   Inter: 400–600 (body text, UI)
+   Syne: 600–800 (display headings — geometric, bold, distinctive)
+   Outfit: 400–600 (body text — clean modern, excellent readability)
    JetBrains Mono: 400–500 (code, step numbers)
    ────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ──────────────────────────────────────────────
@@ -71,8 +71,10 @@ body {
   background-color: var(--surface-0);
   color: var(--text-200);
   font-family: var(--font-body);
+  font-weight: 400;
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -83,13 +85,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--text-100);
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   font-weight: 700;
 }
 
-h1 { font-size: var(--text-6xl); font-weight: 800; }
-h2 { font-size: var(--text-5xl); }
+h1 { font-size: var(--text-6xl); font-weight: 800; letter-spacing: -0.04em; }
+h2 { font-size: var(--text-5xl); font-weight: 800; }
 h3 { font-size: var(--text-3xl); }
 h4 { font-size: var(--text-2xl); }
 h5 { font-size: var(--text-xl); }
@@ -97,8 +99,9 @@ h6 { font-size: var(--text-lg); }
 
 /* ── Body text ───────────────────────────────── */
 p {
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-200);
+  letter-spacing: 0.01em;
 }
 
 p + p {
@@ -192,56 +195,56 @@ input, textarea, select {
 
 /* ── Glass Card ────────────────────────────────
    Premium frosted glass effect (Apple-style)
-   Very subtle, refined
+   Very subtle, refined — NOT default glassmorphism
    Follows UI/UX Pro Max: consistent elevation */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-2xl);
-  transition: all var(--duration-normal) var(--ease-apple);
+  transition: all var(--duration-normal) var(--ease-out-quart);
 }
 
 /* Opt-in hover lift for interactive cards only */
 .glass-card-hover:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
 .light .glass-card,
 [data-theme="light"] .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   border-color: rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .light .glass-card-hover:hover,
 [data-theme="light"] .glass-card-hover:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.06);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
 .light .glass-card,
 [data-theme="light"] .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .light .glass-card:hover,
 [data-theme="light"] .glass-card:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.06);
 }
 
 /* ── Gradient Text ─────────────────────────────
@@ -262,7 +265,7 @@ input, textarea, select {
   background: var(--color-brand-500);
   color: #ffffff;
   border-radius: var(--radius-full);
-  transition: all 200ms var(--ease-apple);
+  transition: all 200ms var(--ease-out-quart);
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: pointer;
@@ -277,27 +280,27 @@ input, textarea, select {
   border-radius: inherit;
   background: var(--color-brand-500);
   opacity: 0;
-  filter: blur(16px);
-  transition: opacity 200ms var(--ease-apple);
+  filter: blur(20px);
+  transition: opacity 200ms var(--ease-out-quart);
   z-index: -1;
 }
 
 .glow-button:hover {
   background: var(--color-brand-400);
-  box-shadow: 0 4px 20px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 4px 24px rgba(20, 184, 166, 0.35);
 }
 
 .glow-button:hover::after {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .glow-button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .glow-button:focus-visible {
-  outline: 2px solid var(--color-brand-500);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 3px;
 }
 
 .glow-button:disabled {
@@ -318,9 +321,9 @@ input, textarea, select {
   position: relative;
   background: transparent;
   color: var(--text-200);
-  border: 1px solid var(--surface-4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-full);
-  transition: all 200ms var(--ease-apple);
+  transition: all 200ms var(--ease-out-quart);
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: pointer;
@@ -329,19 +332,19 @@ input, textarea, select {
 }
 
 .ghost-button:hover {
-  border-color: var(--surface-5);
-  background: var(--surface-1);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--text-100);
 }
 
 .ghost-button:active {
-  transform: scale(0.98);
-  background: var(--surface-2);
+  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .ghost-button:focus-visible {
   outline: 2px solid var(--color-brand-500);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .ghost-button:disabled {
@@ -350,22 +353,33 @@ input, textarea, select {
   transform: none;
 }
 
+.light .ghost-button,
+[data-theme="light"] .ghost-button {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.light .ghost-button:hover,
+[data-theme="light"] .ghost-button:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.03);
+}
+
 /* ── Hero Gradient ─────────────────────────────
    Cinematic hero background (Apple-style)
    Dramatic but refined gradient */
 .hero-gradient {
   background:
-    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(20, 184, 166, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 40%),
-    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 30%),
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(20, 184, 166, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(20, 184, 166, 0.04) 0%, transparent 30%),
     var(--surface-0);
 }
 
 .light .hero-gradient,
 [data-theme="light"] .hero-gradient {
   background:
-    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(6, 182, 212, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
     radial-gradient(ellipse 60% 40% at 20% 80%, rgba(20, 184, 166, 0.03) 0%, transparent 30%),
     var(--surface-0);
 }
@@ -431,15 +445,15 @@ input, textarea, select {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-1) var(--space-4);
-  background: rgba(20, 184, 166, 0.1);
-  border: 1px solid rgba(20, 184, 166, 0.2);
+  background: rgba(20, 184, 166, 0.08);
+  border: 1px solid rgba(20, 184, 166, 0.15);
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--color-brand-400);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .badge-pill::before {

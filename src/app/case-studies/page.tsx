@@ -32,11 +32,13 @@ export default function CaseStudiesPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden hero-gradient">
-        <GradientOrb color="rgba(244, 63, 94, 0.08)" size={500} top="-200px" right="-100px" />
+        <GradientOrb color="rgba(244, 63, 94, 0.08)" size={600} top="-200px" right="-100px" />
 
         <div className="relative section-container">
           <ScrollReveal className="max-w-3xl">
-            <span className="badge-pill mb-4">Case Studies</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-brand-500)]/20 bg-[var(--color-brand-500)]/5 mb-8">
+              <span className="text-sm font-medium text-[var(--color-brand-400)]">Case Studies</span>
+            </div>
             <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-[var(--text-100)]">
               Real businesses, real outcomes
             </h1>
@@ -139,13 +141,13 @@ export default function CaseStudiesPage() {
       <section className="section-padding bg-[var(--surface-1)]/50">
         <div className="section-container">
           <ScrollReveal>
-            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
-              <div>
-                <span className="badge-pill mb-4">Start Your Project</span>
+            <div className="glass-card p-12 sm:p-16 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-500)]/5 via-transparent to-[var(--color-cyan)]/5" />
+              <div className="relative">
                 <h2 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-5 text-[var(--text-100)]">
                   Want to be our next success story?
                 </h2>
-                <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8 max-w-xl">
+                <p className="text-lg text-[var(--text-300)] leading-relaxed mb-8 max-w-xl mx-auto">
                   Let&apos;s discuss your project and create a tailored strategy for your business.
                 </p>
                 <MagneticButton
@@ -155,16 +157,6 @@ export default function CaseStudiesPage() {
                   Start Your Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </MagneticButton>
-              </div>
-              <div className="hidden lg:block">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                  <Image
-                    src="/images/workspace.webp"
-                    alt="Modern workspace ready for your next AI project"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
               </div>
             </div>
           </ScrollReveal>

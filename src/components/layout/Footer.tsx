@@ -14,6 +14,7 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
+  { label: 'Bootstrap Maverick', href: '/bootstrap-maverick' },
   { label: 'About Us', href: '/about' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Gifted Internship', href: '/internship' },
