@@ -203,7 +203,9 @@ input, textarea, select {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-2xl);
-  transition: all var(--duration-normal) var(--ease-out-quart);
+  transition: transform var(--duration-normal) var(--ease-out-quart),
+              background var(--duration-normal) var(--ease-out-quart),
+              border-color var(--duration-normal) var(--ease-out-quart);
 }
 
 /* Opt-in hover lift for interactive cards only */
@@ -213,7 +215,33 @@ input, textarea, select {
   transform: translateY(-2px);
 }
 
-/* Dark mode overrides */
+/* ── Touch Device Hover Gating ─────────────────
+   Prevent hover effects on touch devices
+   Follows Emil Kowalski: gate hover behind pointer media query */
+@media (hover: hover) and (pointer: fine) {
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .glow-button:hover {
+    background: var(--color-brand-400);
+    box-shadow: 0 4px 24px rgba(20, 184, 166, 0.35);
+  }
+
+  .glow-button:hover::after {
+    opacity: 0.4;
+  }
+
+  .ghost-button:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-100);
+  }
+}
+
+/* Dark mode base styles */
 .dark .glass-card,
 [data-theme="dark"] .glass-card {
   background: rgba(255, 255, 255, 0.02);
@@ -222,11 +250,20 @@ input, textarea, select {
   -webkit-backdrop-filter: blur(12px);
 }
 
-.dark .glass-card:hover,
-[data-theme="dark"] .glass-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
-  transform: translateY(-2px);
+/* Dark mode hover overrides */
+@media (hover: hover) and (pointer: fine) {
+  .dark .glass-card:hover,
+  [data-theme="dark"] .glass-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .dark .ghost-button:hover,
+  [data-theme="dark"] .ghost-button:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+  }
 }
 
 /* ── Gradient Text ─────────────────────────────
@@ -247,7 +284,9 @@ input, textarea, select {
   background: var(--color-brand-500);
   color: #ffffff;
   border-radius: var(--radius-full);
-  transition: all 200ms var(--ease-out-quart);
+  transition: background 200ms var(--ease-out-quart),
+              box-shadow 200ms var(--ease-out-quart),
+              transform 160ms var(--ease-out-quart);
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: pointer;
@@ -305,7 +344,10 @@ input, textarea, select {
   color: var(--text-200);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius-full);
-  transition: all 200ms var(--ease-out-quart);
+  transition: border-color 200ms var(--ease-out-quart),
+              background 200ms var(--ease-out-quart),
+              color 200ms var(--ease-out-quart),
+              transform 160ms var(--ease-out-quart);
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: pointer;
