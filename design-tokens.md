@@ -66,8 +66,8 @@
 ## Typography
 
 ### Font Stack
-- **Display:** `'Syne', system-ui, sans-serif` — bold, geometric, distinctive
-- **Body:** `'Outfit', system-ui, sans-serif` — clean, modern, excellent readability
+- **Display:** `'Bricolage Grotesque', system-ui, sans-serif` — distinctive, bold character
+- **Body:** `'DM Sans', system-ui, sans-serif` — clean, readable, excellent contrast
 - **Mono:** `'JetBrains Mono', ui-monospace, monospace` — code, step numbers, badges
 
 ### Font Scale

@@ -43,20 +43,22 @@ AI-focused digital consulting and agency:
 - Bootstrap Maverick: AI-powered idea validation tool
 
 ## Design Direction
-- Dark-mode primary with teal/cyan brand accent
+- Light mode is DEFAULT, dark mode is toggle option
 - Clean, minimal, tech-forward aesthetic
-- Strong typographic hierarchy (Syne display + Outfit body)
+- Strong typographic hierarchy (Bricolage Grotesque display + DM Sans body)
 - Purposeful motion (hero entrance, scroll reveals, hover states)
 - NO generic gradients, NO purple-to-blue, NO card nesting
-- Glass cards: subtle (0.02 opacity, 12px blur)
-- Hero gradients: wider ellipse (120%), more subtle colors
+- Glass cards: subtle, light mode default
+- Hero gradients: wider ellipse, more subtle colors
+- Touch device hover gating for accessibility
 
 ## Typography
-- **Display:** Syne (600-800 weight) — bold, geometric, distinctive
-- **Body:** Outfit (300-600 weight) — clean, modern, excellent readability
+- **Display:** Bricolage Grotesque (600-800 weight) — distinctive, bold character
+- **Body:** DM Sans (300-600 weight) — clean, readable, excellent contrast
 - **Mono:** JetBrains Mono (400-500) — code, step numbers, badges
 - Line height: 1.7 (body), 1.1 (headings)
 - Letter spacing: 0.01em (body), -0.03em (headings)
+- Easing: Strong custom curves per Emil Kowalski (0.23, 1, 0.32, 1)
 
 ## Animation Preferences
 - Hero: staggered word-by-word reveal (TextReveal)
@@ -96,9 +98,12 @@ https://niksconsulting.vercel.app — full content extracted, all pages studied
 - **2026-07-03:** Complete site overhaul
   - Built Blog, Training, Internship pages with full content
   - Built Bootstrap Maverick landing page (premium, conversion-optimized)
-  - Upgraded typography: Plus Jakarta Sans + Inter → Syne + Outfit
+  - Upgraded typography: Plus Jakarta Sans + Inter → Syne + Outfit → Bricolage Grotesque + DM Sans
   - Polished glass cards, buttons, hero gradients, badge pills
   - Added trust signals, marquee, social proof bars
   - Improved hero sections across all pages
   - Better CTAs with gradient overlays
+  - Switched to light mode default with dark mode toggle
+  - Applied Emil Kowalski design engineering principles
+  - Stronger easing curves, touch hover gating, specific transitions
   - All 12 routes build cleanly
