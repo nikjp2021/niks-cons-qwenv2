@@ -8,12 +8,12 @@
 
 /* ──────────────────────────────────────────────
    FONT IMPORTS — Google Fonts
-   Syne: 600–800 (display headings — geometric, bold, distinctive)
-   Outfit: 400–600 (body text — clean modern, excellent readability)
+   Bricolage Grotesque: 600–800 (display — distinctive, bold character)
+   DM Sans: 400–600 (body — clean, readable, excellent contrast)
    JetBrains Mono: 400–500 (code, step numbers)
    ────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ──────────────────────────────────────────────

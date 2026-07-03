@@ -60,9 +60,11 @@
 
   /* ──────────────────────────────────────────────
      TYPOGRAPHY
+     Bricolage Grotesque (display) + DM Sans (body)
+     Distinctive pairing with genuine contrast
      ────────────────────────────────────────────── */
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-body:    'Outfit', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   /* ──────────────────────────────────────────────
