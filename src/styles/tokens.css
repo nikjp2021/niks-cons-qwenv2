@@ -3,60 +3,55 @@
    Single source of truth for all design decisions.
    Zero hardcoded values anywhere else in the codebase.
    
-   Sources: brand-guide.md, design-tokens.md, research-trends.md
-   Updated: 2026-06-05
+   Light mode is DEFAULT. Dark mode is toggle option.
+   Updated: 2026-07-03
    ============================================================ */
 
 :root {
   /* ──────────────────────────────────────────────
      BRAND COLORS — Teal/Cyan Primary
-     Source: brand-guide.md § Color Palette
      ────────────────────────────────────────────── */
   --color-brand-50:  #f0fdfa;
   --color-brand-100: #ccfbf1;
   --color-brand-200: #99f6e4;
   --color-brand-300: #5eead4;
   --color-brand-400: #2dd4bf;
-  --color-brand-500: #14b8a6;  /* PRIMARY BRAND COLOR */
-  --color-brand-600: #0d9488;  /* Primary hover */
-  --color-brand-700: #0f766e;  /* Primary active */
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
   --color-brand-800: #115e59;
   --color-brand-900: #134e4a;
 
   /* ──────────────────────────────────────────────
      ACCENT PALETTE
-     Source: brand-guide.md § Accent Palette
      ────────────────────────────────────────────── */
-  --color-cyan:    #06b6d4;  /* Secondary highlights */
-  --color-violet:  #8b5cf6;  /* Tertiary / test accent */
-  --color-amber:   #f59e0b;  /* Warnings, ratings, process step 4 */
-  --color-emerald: #10b981;  /* Success, online status */
-  --color-pink:    #ec4899;  /* Social media service */
+  --color-cyan:    #06b6d4;
+  --color-violet:  #8b5cf6;
+  --color-amber:   #f59e0b;
+  --color-emerald: #10b981;
+  --color-pink:    #ec4899;
 
   /* ──────────────────────────────────────────────
-     SURFACE COLORS — Dark Mode (Default)
-     Source: brand-guide.md § Surface
+     SURFACE COLORS — Light Mode (Default)
      ────────────────────────────────────────────── */
-  --surface-0: #09090b;  /* Page background */
-  --surface-1: #0f0f13;  /* Card backgrounds */
-  --surface-2: #18181b;  /* Elevated surfaces */
-  --surface-3: #1e1e24;  /* Borders, dividers */
-  --surface-4: #27272a;  /* Subtle borders */
-  --surface-5: #3f3f46;  /* Muted elements */
+  --surface-0: #fafaf9;
+  --surface-1: #f4f4f5;
+  --surface-2: #ffffff;
+  --surface-3: #e4e4e7;
+  --surface-4: #d4d4d8;
+  --surface-5: #a1a1aa;
 
   /* ──────────────────────────────────────────────
-     TEXT COLORS — Dark Mode (Default)
-     Source: brand-guide.md § Text
+     TEXT COLORS — Light Mode (Default)
      ────────────────────────────────────────────── */
-  --text-100: #fafafa;  /* Headlines */
-  --text-200: #e4e4e7;  /* Body text */
-  --text-300: #a1a1aa;  /* Descriptions */
-  --text-400: #71717a;  /* Muted / captions */
-  --text-500: #52525b;  /* Disabled */
+  --text-100: #09090b;
+  --text-200: #18181b;
+  --text-300: #52525b;
+  --text-400: #71717a;
+  --text-500: #a1a1aa;
 
   /* ──────────────────────────────────────────────
      SEMANTIC COLORS
-     Source: brand-guide.md § Semantic Colors
      ────────────────────────────────────────────── */
   --color-success: #10b981;
   --color-error:   #ef4444;
@@ -65,116 +60,97 @@
 
   /* ──────────────────────────────────────────────
      TYPOGRAPHY
-     Source: brand-guide.md § Typography
-     Plus Jakarta Sans (display) + Inter (body)
      ────────────────────────────────────────────── */
   --font-display: 'Syne', system-ui, sans-serif;
   --font-body:    'Outfit', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   /* ──────────────────────────────────────────────
-     FONT SIZE SCALE — Fluid Typography (Premium)
-     Inspired by Apple.com — large, cinematic typography
-     Sizes ≥ 4xl use clamp() for responsive scaling
+     FONT SIZE SCALE — Fluid Typography
      ────────────────────────────────────────────── */
-  --text-xs:  0.75rem;                                      /* 12px — Badges, tiny labels */
-  --text-sm:  0.875rem;                                     /* 14px — Captions, card body */
-  --text-base: 1rem;                                        /* 16px — Body text */
-  --text-lg:  1.125rem;                                     /* 18px — Lead paragraphs */
-  --text-xl:  1.25rem;                                      /* 20px — Subheadings */
-  --text-2xl: 1.5rem;                                       /* 24px — Card titles */
-  --text-3xl: 1.875rem;                                     /* 30px — Section subtitles */
-  --text-4xl: clamp(2.25rem, 3.5vw, 2.75rem);               /* 44px — Section headings */
-  --text-5xl: clamp(2.75rem, 4.5vw, 3.5rem);                /* 56px — Large section headings */
-  --text-6xl: clamp(3.25rem, 5.5vw, 4.25rem);               /* 68px — Hero headings */
-  --text-7xl: clamp(4rem, 7vw, 5.5rem);                      /* 88px — Large hero headings */
-  --text-8xl: clamp(5rem, 10vw, 8rem);                       /* 128px — Display headings (Apple-style) */
+  --text-xs:  0.75rem;
+  --text-sm:  0.875rem;
+  --text-base: 1rem;
+  --text-lg:  1.125rem;
+  --text-xl:  1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: clamp(2.25rem, 3.5vw, 2.75rem);
+  --text-5xl: clamp(2.75rem, 4.5vw, 3.5rem);
+  --text-6xl: clamp(3.25rem, 5.5vw, 4.25rem);
+  --text-7xl: clamp(4rem, 7vw, 5.5rem);
+  --text-8xl: clamp(5rem, 10vw, 8rem);
 
   /* ──────────────────────────────────────────────
-     SPACING SCALE — 4px base (Premium generous spacing)
-     Inspired by Apple.com — generous whitespace
+     SPACING SCALE — 4px base
      ────────────────────────────────────────────── */
   --space-px: 1px;
   --space-0:  0;
-  --space-1:  0.25rem;   /*  4px — Hairline spacing */
-  --space-2:  0.5rem;    /*  8px — Tight spacing */
-  --space-3:  0.75rem;   /* 12px — Compact spacing */
-  --space-4:  1rem;      /* 16px — Default spacing */
-  --space-5:  1.25rem;   /* 20px — Small spacing */
-  --space-6:  1.5rem;    /* 24px — Standard spacing */
-  --space-8:  2rem;      /* 32px — Medium spacing */
-  --space-10: 2.5rem;    /* 40px — Large spacing */
-  --space-12: 3rem;      /* 48px — Extra large spacing */
-  --space-16: 4rem;      /* 64px — Section padding */
-  --space-20: 5rem;      /* 80px — Section margins */
-  --space-24: 6rem;      /* 96px — Large section margins */
-  --space-28: 7rem;      /* 112px — Page sections */
-  --space-32: 8rem;      /* 128px — Page padding */
-  --space-36: 9rem;      /* 144px — Premium section spacing */
-  --space-40: 10rem;     /* 160px — Cinematic section spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
+  --space-36: 9rem;
+  --space-40: 10rem;
 
   /* ──────────────────────────────────────────────
-     BORDER RADIUS — Soft friendly scale
-     Matches "Approachable" brand personality
+     BORDER RADIUS
      ────────────────────────────────────────────── */
-  --radius-xs:   0.25rem;   /*  4px */
-  --radius-sm:   0.375rem;  /*  6px */
-  --radius-md:   0.5rem;    /*  8px */
-  --radius-lg:   0.75rem;   /* 12px */
-  --radius-xl:   1rem;      /* 16px */
-  --radius-2xl:  1.5rem;    /* 24px */
+  --radius-xs:   0.25rem;
+  --radius-sm:   0.375rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
   --radius-full: 9999px;
 
   /* ──────────────────────────────────────────────
-     SHADOWS — Dark Mode (Default)
-     Source: brand-guide.md § Shadow Patterns
+     SHADOWS — Light Mode (Default)
      ────────────────────────────────────────────── */
-  --shadow-xs:   0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-sm:   0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
-  --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-  --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-  --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
-  --shadow-2xl:  0 25px 50px -12px rgb(0 0 0 / 0.5);
-  --shadow-glow: 0 0 20px rgba(20, 184, 166, 0.15);        /* Brand accent glow */
-  --shadow-glow-lg: 0 0 40px rgba(20, 184, 166, 0.2);
+  --shadow-xs:   0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm:   0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+  --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
+  --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+  --shadow-2xl:  0 25px 50px -12px rgb(0 0 0 / 0.15);
+  --shadow-glow: 0 0 20px rgba(20, 184, 166, 0.1);
+  --shadow-glow-lg: 0 0 40px rgba(20, 184, 166, 0.15);
 
   /* ──────────────────────────────────────────────
-     GRADIENT ORBS — Decorative background elements
-     Source: brand-guide.md § Gradient Usage (Restricted)
-     Subtle brand teal only — NO purple-to-blue
+     GRADIENT ORBS — Subtle for light backgrounds
      ────────────────────────────────────────────── */
-  --orb-teal:   radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
-  --orb-cyan:   radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
-  --orb-amber:  radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  --orb-teal:   radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
+  --orb-cyan:   radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+  --orb-amber:  radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
 
   /* ──────────────────────────────────────────────
-     MOTION TOKENS (Premium smooth animations)
-     Inspired by Apple.com — buttery smooth, cinematic
+     MOTION TOKENS
      ────────────────────────────────────────────── */
-  --duration-fast:   200ms;    /* Micro-interactions, button presses */
-  --duration-normal: 400ms;    /* Standard transitions, hover states */
-  --duration-slow:   600ms;    /* Page transitions, modal animations */
-  --duration-slower: 1000ms;   /* Complex orchestrated animations */
+  --duration-fast:   200ms;
+  --duration-normal: 400ms;
+  --duration-slow:   600ms;
+  --duration-slower: 1000ms;
 
-  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);   /* Hero entrances, bold movements */
-  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);   /* Scroll reveals, card interactions */
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);  /* Custom smooth ease */
-  --ease-apple:     cubic-bezier(0.25, 0.1, 0.25, 1); /* Apple-style smooth easing */
-  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);    /* Balanced transitions */
-  --ease-in:        cubic-bezier(0.4, 0, 1, 1);      /* Entrance animations */
-  --ease-out:       cubic-bezier(0, 0, 0.2, 1);      /* Exit animations */
-
-  /* Spring physics (for Framer Motion — not CSS, documented here for reference)
-     Default:  { type: "spring", stiffness: 300, damping: 30 }
-     Bouncy:   { type: "spring", stiffness: 200, damping: 20 }
-     Stiff:    { type: "spring", stiffness: 400, damping: 30 }
-     Smooth:   { type: "spring", stiffness: 100, damping: 20 }
-     Apple:    { type: "spring", stiffness: 120, damping: 20 }
-  */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-apple:     cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:        cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:       cubic-bezier(0, 0, 0.2, 1);
 
   /* ──────────────────────────────────────────────
      Z-INDEX SCALE
-     Prevents z-index wars across components
      ────────────────────────────────────────────── */
   --z-base:     0;
   --z-dropdown: 100;
@@ -187,32 +163,32 @@
   /* ──────────────────────────────────────────────
      LAYOUT TOKENS
      ────────────────────────────────────────────── */
-  --container-max: 72rem;       /* 1152px — max-w-6xl */
-  --container-narrow: 48rem;    /* 768px — max-w-3xl for prose */
-  --navbar-height: 4rem;        /* 64px */
+  --container-max: 72rem;
+  --container-narrow: 48rem;
+  --navbar-height: 4rem;
 }
 
 
 /* ============================================================
-   LIGHT MODE OVERRIDES
-   Source: brand-guide.md § Surface (Light Mode)
+   DARK MODE OVERRIDES
+   Applied when user toggles to dark mode
    ============================================================ */
-.light,
-[data-theme="light"] {
+.dark,
+[data-theme="dark"] {
   /* Surface */
-  --surface-0: #fafaf9;
-  --surface-1: #f4f4f5;
-  --surface-2: #ffffff;
-  --surface-3: #e4e4e7;
-  --surface-4: #d4d4d8;
-  --surface-5: #a1a1aa;
+  --surface-0: #09090b;
+  --surface-1: #0f0f13;
+  --surface-2: #18181b;
+  --surface-3: #1e1e24;
+  --surface-4: #27272a;
+  --surface-5: #3f3f46;
 
   /* Text */
-  --text-100: #09090b;
-  --text-200: #18181b;
-  --text-300: #52525b;
+  --text-100: #fafafa;
+  --text-200: #e4e4e7;
+  --text-300: #a1a1aa;
   --text-400: #71717a;
-  --text-500: #a1a1aa;
+  --text-500: #52525b;
 
   /* Semantic */
   --color-success: #10b981;
@@ -220,18 +196,18 @@
   --color-warning: #f59e0b;
   --color-info:    #06b6d4;
 
-  /* Shadows — lighter for light mode */
-  --shadow-xs:   0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-sm:   0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
-  --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.08);
-  --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
-  --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
-  --shadow-2xl:  0 25px 50px -12px rgb(0 0 0 / 0.15);
-  --shadow-glow: 0 0 20px rgba(20, 184, 166, 0.1);
-  --shadow-glow-lg: 0 0 40px rgba(20, 184, 166, 0.15);
+  /* Shadows — deeper for dark mode */
+  --shadow-xs:   0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-sm:   0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+  --shadow-2xl:  0 25px 50px -12px rgb(0 0 0 / 0.5);
+  --shadow-glow: 0 0 20px rgba(20, 184, 166, 0.15);
+  --shadow-glow-lg: 0 0 40px rgba(20, 184, 166, 0.2);
 
-  /* Gradient orbs — slightly stronger for light backgrounds */
-  --orb-teal:  radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
-  --orb-cyan:  radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
-  --orb-amber: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+  /* Gradient orbs — stronger for dark backgrounds */
+  --orb-teal:  radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
+  --orb-cyan:  radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  --orb-amber: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
 }
