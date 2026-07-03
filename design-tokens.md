@@ -66,11 +66,9 @@
 ## Typography
 
 ### Font Stack
-- **Display:** `'Plus Jakarta Sans', 'Inter', system-ui, sans-serif`
-- **Body:** `'Inter', system-ui, sans-serif`
-- **Mono:** `'JetBrains Mono', ui-monospace, monospace`
-
-**NOTE:** The CLAUDE.md anti-pattern says "Never use Inter" as primary display font. The existing codebase uses Plus Jakarta Sans as the display font with Inter as body fallback. We will keep this — Inter is only the body font, not the display font. If the user wants a more distinctive display font, we can swap to Sora, Cabinet Grotesk, or General Sans.
+- **Display:** `'Syne', system-ui, sans-serif` — bold, geometric, distinctive
+- **Body:** `'Outfit', system-ui, sans-serif` — clean, modern, excellent readability
+- **Mono:** `'JetBrains Mono', ui-monospace, monospace` — code, step numbers, badges
 
 ### Font Scale
 | Token | Value | Usage |
@@ -82,10 +80,17 @@
 | `--text-xl` | `1.25rem` (20px) | Subheadings |
 | `--text-2xl` | `1.5rem` (24px) | Card titles |
 | `--text-3xl` | `1.875rem` (30px) | Section subtitles |
-| `--text-4xl` | `2.25rem` (36px) | Section headings (mobile) |
-| `--text-5xl` | `3rem` (48px) | Section headings |
-| `--text-6xl` | `3.75rem` (60px) | Hero headings (desktop) |
-| `--text-7xl` | `4.5rem` (72px) | Hero headings (xl) |
+| `--text-4xl` | `clamp(2.25rem, 3.5vw, 2.75rem)` | Section headings |
+| `--text-5xl` | `clamp(2.75rem, 4.5vw, 3.5rem)` | Large section headings |
+| `--text-6xl` | `clamp(3.25rem, 5.5vw, 4.25rem)` | Hero headings |
+| `--text-7xl` | `clamp(4rem, 7vw, 5.5rem)` | Large hero headings |
+| `--text-8xl` | `clamp(5rem, 10vw, 8rem)` | Display headings |
+
+### Line Heights
+- Body: 1.7
+- Headings: 1.1
+- Letter spacing (body): 0.01em
+- Letter spacing (headings): -0.03em
 
 ## Spacing Scale
 | Token | Value |

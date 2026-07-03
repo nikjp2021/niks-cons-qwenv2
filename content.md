@@ -1,6 +1,7 @@
 # Content — Nik's Consulting V2
 All copy extracted from niksconsulting.vercel.app on 2026-06-04.
 Verified and enhanced for V2 redesign on 2026-06-05.
+Updated 2026-07-03: Added Blog, Training, Internship, Bootstrap Maverick pages.
 
 ---
 
@@ -8,6 +9,7 @@ Verified and enhanced for V2 redesign on 2026-06-05.
 
 ### Desktop Nav Links
 - Home → `/`
+- Bootstrap Maverick → `/bootstrap-maverick`
 - Services → dropdown: Our Services (`/services`), Case Studies (`/case-studies`)
 - Training → dropdown: AI Training (`/training`), Gifted Internship (`/internship`)
 - About → `/about`
@@ -48,6 +50,7 @@ Verified and enhanced for V2 redesign on 2026-06-05.
 - Agile Project Management → `/services#agile-pm`
 
 **COMPANY:**
+- Bootstrap Maverick → `/bootstrap-maverick`
 - About Us → `/about`
 - Case Studies → `/case-studies`
 - Gifted Internship → `/internship`

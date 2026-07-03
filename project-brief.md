@@ -16,6 +16,7 @@
 - Non-technical leaders exploring AI adoption
 - Existing businesses needing digital transformation
 - Companies seeking automation to reduce operational overhead
+- Entrepreneurs validating ideas (Bootstrap Maverick)
 
 ## Core Conversion Goal
 Convert visitors into consultation bookings via "Get a Free Quote" CTA.
@@ -29,6 +30,9 @@ AI-focused digital consulting and agency:
 - Website & App Development
 - AI-Powered Social Media
 - Agile Project Management
+- AI Training Programs
+- Gifted Internship Program
+- Bootstrap Maverick (AI brainstorming tool)
 
 ## Key Differentiators
 - AI-first approach to every engagement
@@ -36,23 +40,34 @@ AI-focused digital consulting and agency:
 - 50+ projects delivered, 300% average ROI
 - Founder with PhD + Xiaomi MiMo Grant + Expedia background
 - Real case studies with measurable outcomes
+- Bootstrap Maverick: AI-powered idea validation tool
 
 ## Design Direction
 - Dark-mode primary with teal/cyan brand accent
 - Clean, minimal, tech-forward aesthetic
-- Strong typographic hierarchy
+- Strong typographic hierarchy (Syne display + Outfit body)
 - Purposeful motion (hero entrance, scroll reveals, hover states)
 - NO generic gradients, NO purple-to-blue, NO card nesting
+- Glass cards: subtle (0.02 opacity, 12px blur)
+- Hero gradients: wider ellipse (120%), more subtle colors
+
+## Typography
+- **Display:** Syne (600-800 weight) — bold, geometric, distinctive
+- **Body:** Outfit (300-600 weight) — clean, modern, excellent readability
+- **Mono:** JetBrains Mono (400-500) — code, step numbers, badges
+- Line height: 1.7 (body), 1.1 (headings)
+- Letter spacing: 0.01em (body), -0.03em (headings)
 
 ## Animation Preferences
-- Hero: staggered entrance with typing/reveal effect
-- Scroll reveals on all sections
+- Hero: staggered word-by-word reveal (TextReveal)
+- Scroll reveals on all sections (ScrollReveal with viewport trigger)
 - Counter animations for metrics
-- Magnetic hover on CTAs
-- Subtle card hover lifts
+- Magnetic hover on CTAs (MagneticButton)
+- Subtle card hover lifts with gradient glow
 - Scroll progress indicator
+- Marquee for brand reinforcement
 
-## Tech Stack (from existing codebase)
+## Tech Stack
 - Next.js 16 (App Router)
 - React 19
 - Tailwind CSS v4
@@ -60,5 +75,30 @@ AI-focused digital consulting and agency:
 - TypeScript
 - Lucide React
 
+## Pages (12 routes)
+| Route | Page | Status |
+|---|---|---|
+| `/` | Home | ✅ Complete |
+| `/services` | Services | ✅ Complete |
+| `/case-studies` | Case Studies | ✅ Complete |
+| `/about` | About | ✅ Complete |
+| `/contact` | Contact | ✅ Complete |
+| `/get-a-quote` | Get a Quote | ✅ Complete |
+| `/blog` | Blog | ✅ Complete |
+| `/training` | Training | ✅ Complete |
+| `/internship` | Internship | ✅ Complete |
+| `/bootstrap-maverick` | Bootstrap Maverick | ✅ Complete |
+
 ## Reference Site
 https://niksconsulting.vercel.app — full content extracted, all pages studied
+
+## Changelog
+- **2026-07-03:** Complete site overhaul
+  - Built Blog, Training, Internship pages with full content
+  - Built Bootstrap Maverick landing page (premium, conversion-optimized)
+  - Upgraded typography: Plus Jakarta Sans + Inter → Syne + Outfit
+  - Polished glass cards, buttons, hero gradients, badge pills
+  - Added trust signals, marquee, social proof bars
+  - Improved hero sections across all pages
+  - Better CTAs with gradient overlays
+  - All 12 routes build cleanly

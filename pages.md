@@ -10,6 +10,10 @@
 | `/about` | About | P0 | Team credibility, founder story, expertise | Get a Free Quote |
 | `/contact` | Contact | P0 | Direct communication channel | Send Message / Schedule Call |
 | `/get-a-quote` | Get a Quote | P0 | Primary conversion — lead capture form | Submit Quote Request |
+| `/blog` | Blog | P1 | Content marketing, SEO, thought leadership | Newsletter signup |
+| `/training` | Training | P1 | AI training programs, course offerings | Book a Training |
+| `/internship` | Internship | P1 | Gifted internship program, talent acquisition | Apply for Internship |
+| `/bootstrap-maverick` | Bootstrap Maverick | P1 | AI brainstorming tool landing page | Start Brainstorming Free |
 
 ---
 
@@ -18,7 +22,7 @@
 ### Navbar
 - **Type:** Sticky top, glass-card backdrop on scroll
 - **Content:** Logo (left), nav links (center), CTA + theme toggle (right)
-- **Nav links:** Home, Services (dropdown: Our Services, Case Studies), Training (dropdown: AI Training, Gifted Internship), About, Blog, Contact
+- **Nav links:** Home, Bootstrap Maverick, Services (dropdown: Our Services, Case Studies), Training (dropdown: AI Training, Gifted Internship), About, Blog, Contact
 - **CTA:** "Get a Quote" pill button → `/get-a-quote`
 - **Mobile:** Hamburger icon → full-screen overlay menu
 - **Theme toggle:** Sun/Moon icon, toggles `.light` class on `<html>`
